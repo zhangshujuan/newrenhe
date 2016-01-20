@@ -1,0 +1,17 @@
+{{#each eventsList}}
+<li class="item">
+	<span class="fytype{{#is chargeType "===" 1}} fytype-free{{/is}}{{#is chargeType "===" 2}} fytype-aa{{/is}}{{#is chargeType "===" 1}} fytype-toll{{/is}}">{{chargeTypeName}}</span>
+	<a href="/events/detail/{{id}}.xhtml"><img width="295" height="193" src="{{realMiddleLogo}}"></a>
+	<h3><a href="/events/detail/{{id}}.xhtml">{{subject}}<span>{{map ../i18n 2}}{{typeName}}{{map ../i18n 3}}</span></a></h3>
+	<p class="clearfix"><span class="pull-left">{{startTimeShow}}</span><span class="pull-right">{{cityName}}</span></p>
+	<hr>
+	<p class="actusers clearfix">
+		<img src="{{members.minUserFaceImageUrl}}" class="media-object cmu-img pull-left">
+		<span class="pull-left">{{members.name}} {{map ../i18n 4}}</span>
+		<span class="pull-right">{{interest}} {{map ../i18n 5}}</span>
+	</p>
+</li>
+{{/each}}
+{{#is hasNext "===" true}}
+<li class="more-activitys"><a href="javascript:void(0);" class="js-more-list">{{map i18n 6}}</a></li>
+{{/is}}

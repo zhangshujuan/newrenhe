@@ -1,0 +1,79 @@
+<ul>
+{{#each data}}
+{{#is baseConversation.type "===" 1}}
+	<li action-type="show-chat" data-cid="{{baseConversation.conversationId}}" data-bind-lastmsg="{{baseConversation.conversationId}}">
+		<div class="media">
+		{{#each lastMessages}}
+		  <div class="media-left">
+				{{#is receiverMessageStatus.readStatus "not" 2}}
+			  		<span class="msg-status"></span>
+			  	{{/is}}
+		      <img class="media-object itu-img" model="img|nick" src="http://s1.renhe.cn/images/headnone_50.jpg" alt="...">
+		  </div>
+		  <div class="media-body"> 
+		    <h4 class="media-heading" model="nick"></h4>
+		    <p class="action-text">
+		    	{{#is baseMessage.content.contentType "===" 1}}
+		    	{{face baseMessage.content.textContent.text}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 2}}
+		    	{{map ../../../../i18n 0}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 3}}
+		    	{{map ../../../../i18n 1}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 4}}
+		    	{{map ../../../../i18n 2}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 102}}
+		    	{{map ../../../../i18n 3}}
+		    	{{/is}}
+		    </p>
+		    <p class="action-time">{{calendar baseMessage.createdAt}}</p>
+		    
+		  </div>
+		  {{/each}}
+		</div>
+	</li>
+{{/is}}
+{{#is baseConversation.type "===" 2}}
+	<li action-type="show-chat" data-cid="{{baseConversation.conversationId}}" data-bind-lastmsg="{{baseConversation.conversationId}}">
+		<div class="media">
+		{{#each lastMessages}}
+		  <div class="media-left">
+				{{#is receiverMessageStatus.readStatus "not" 2}}
+			  		<span class="msg-status"></span>
+			  	{{/is}}
+		      <img class="media-object itu-img" src="{{../baseConversation.icon}}" alt="{{../baseConversation.title}}">
+		  </div>
+		  <div class="media-body"> 
+		    <h4 class="media-heading">{{../baseConversation.title}}</h4>
+		    <p class="action-text">
+		    	{{#is baseMessage.creatorType "not" 2}}
+		    	<span data-mid="{{baseMessage.openIdEx.openId}}"></span>:
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 1}}
+		    	{{face baseMessage.content.textContent.text}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 2}}
+		    	{{map ../../../../i18n 0}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 3}}
+		    	{{map ../../../../i18n 1}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 4}}
+		    	{{map ../../../../i18n 2}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 102}}
+		    	{{map ../../../../i18n 3}}
+		    	{{/is}}
+		    </p>
+		    <p class="action-time">{{calendar baseMessage.createdAt}}</p>
+		    
+		  </div>
+		  {{/each}}
+		</div>
+	</li>
+{{/is}}
+{{/each}}
+</ul>

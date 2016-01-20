@@ -1,0 +1,91 @@
+{{#each data.memberVoList}}
+<div class="media">
+	<div class="media-left">
+	    <a href="/viewprofile.xhtml?sid={{sid}}&type=livingroom" target="_blank">
+	      <img class="media-object lgu-img" src="{{userImg}}" alt="{{name}}">
+	    </a>
+	    {{#is vipType "===" 0}}
+		    {{#is realNameAuthState "===" 1}}
+		    <a href="http://www.renhe.cn/nameauth.html" target="_blank" class="level">
+				<b class="level-icon level-icon-auth" title="{{map ../i18n 8}}"></b>
+			</a>
+			{{/is}}
+		{{/is}}
+		{{#is vipType "===" 1}}
+	    <a href="http://www.renhe.cn/vip" target="_blank" class="level">
+			<s class="level-icon level-icon-vip" title="{{map ../i18n 9}}"></s>
+		</a>
+		{{/is}}
+		{{#is vipType "===" 2}}
+	    <a href="http://www.renhe.cn/vip" target="_blank" class="level">
+			<s class="level-icon level-icon-gold" title="{{map ../i18n 10}}"></s>
+		</a>
+		{{/is}}
+		{{#is vipType "===" 3}}
+	    <a href="http://www.renhe.cn/vip" target="_blank" class="level">
+			<s class="level-icon level-icon-plat" title="{{map ../i18n 11}}"></s>
+		</a>
+		{{/is}}
+	</div>
+	<div class="media-body">
+	    <div class="media-heading clearfix">
+	    {{#is friend "not" true}}
+	    	<a class="btn btn-default pull-right" href="/contact/add_friend_driect.xhtml?sfid={{sid}}" target="_blank">{{map ../../i18n 7}}</a>
+	    	{{/is}} 	
+	    	<span class="tt pull-left">
+	    	<a href="/viewprofile.xhtml?sid={{sid}}&type=livingroom" target="_blank" class="tn">{{name}}</a>
+	    	</span>
+	    	<span class="pull-left">
+		    	<span class="tnm">
+		    	{{map ../i18n 0}} <span class="red mr20">
+		    	{{#is ismyself "not" true}}
+		    	     <a href="/viewprofile.html?sid={{sid}}&type=friend" target="_blank" class="red">{{friendCount}}</a></span>
+		    	{{/is}}
+		    	{{#is ismyself "not" false}}
+		    	      <a href="/contact/index.xhtml" target="_blank" class="red">{{friendCount}}</a></span>
+		    	{{/is}}
+		    	
+			{{map ../i18n 1}} <span class="red"><a href="/viewprofile.xhtml?sid={{sid}}&label=dongtai" target="_blank" class="red">{{messageBoardCount}}</a></span>
+			</span>
+	    	</span>
+	    	<br/>
+	    	<span class="ti">
+	    		<a href="?title={{curTitle}}" data-params="" class="tm">{{curTitle}}</a>
+	    		 / <a href="?company={{curCompany}}" class="tm">{{curCompany}}</a>
+	    	</span>
+	    	<span class="tg">
+	    		<a href="?query={{cityName}}" class="tm">{{cityName}}</a>
+	    		{{#splitEach industryName "."}}
+	    		<a href="?query={{this}}" class="tm">{{this}}</a>
+	    		{{/splitEach}}
+	    	</span>
+	    
+	    	
+	    </div>
+	    {{#is specialties "len>" 0}}
+	    <div class="rmintro clearfix">
+	    	<div class="rmtt pull-left">{{map ../../i18n 3}}</div>
+	    	<p class="pull-left">{{join specialties ","}}</p>
+	    </div>
+	    {{/is}}
+	    {{#is preferred "len>" 0}}
+	    <div class="rmintro clearfix">
+	    	<div class="rmtt pull-left">{{map ../../i18n 4}}</div>
+	    	<p class="pull-left">{{join preferred ","}}</p>
+	    </div>
+	    {{/is}}
+	    {{#is aim "len>" 0}}
+	    <div class="rmintro clearfix">
+	    	<div class="rmtt pull-left">{{map ../../i18n 5}}</div>
+	    	<p class="pull-left">{{join aim ","}}</p>
+	    </div>
+	    {{/is}}
+	    {{#is professional "not" ""}}
+	    <div class="rmintro clearfix">
+	    	<div class="rmtt pull-left">{{map ../../i18n 6}}</div>
+	    	<p class="pull-left">{{#slice professional start=0 end=190}}{{this}}{{#is ../professional "len>" 190}}...{{/is}}{{/slice}}</p>
+	    </div>
+	    {{/is}}
+	</div>
+</div>
+{{/each}}

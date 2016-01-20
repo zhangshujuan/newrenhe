@@ -1,0 +1,25 @@
+<p class="text-overflow">
+	<img data-avatar="{{data.baseMessage.openIdEx.openId}}" src="http://s1.renhe.cn/images/headnone_50.jpg">
+	<span data-nick="{{data.baseMessage.openIdEx.openId}}"></span>:
+	{{#is data.baseMessage.content.contentType "===" 1}}
+		{{face data.baseMessage.content.textContent.text}}
+	{{/is}}
+	{{#is data.baseMessage.content.contentType "===" 2}}
+		{{map i18n.msgType 0}}
+	{{/is}}
+	{{#is data.baseMessage.content.contentType "===" 3}}
+		{{map i18n.msgType 1}}
+	{{/is}}
+	{{#is data.baseMessage.content.contentType "===" 4}}
+		{{map i18n.msgType 2}}{{data.baseMessage.content.fileContent.fileName}}
+	{{/is}}
+	{{#is data.baseMessage.content.contentType "===" 102}}
+	    {{#each data.baseMessage.content.attachments}}
+		{{#chatIsCard url}}
+		{{map ../../i18n.msgType 5}}{{../extension.text}}
+		{{else}}
+		{{map ../../i18n.msgType 3}}{{../extension.text}}
+		{{/chatIsCard}}
+		{{/each}}
+	{{/is}}
+</p>

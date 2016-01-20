@@ -1,0 +1,23 @@
+{{#each data.experienceVoList}}
+	{{#is @index "not" 0}}
+	<hr class="row"/>
+	{{/is}}
+	<dl class="renhe-dl">
+		<dt>{{map ../i18n/label 1}} </dt>
+		<dd><a href="#" class="mr30">{{experience.company}}</a><span  class="mr30">{{orgTypeName}}:{{orgSizeName}}</span><a href="#">{{industryName}}</a></dd>
+	</dl>
+	<dl class="renhe-dl">
+		<dt>{{map ../i18n/label 0}}</dt>
+		<dd>{{experience.title}}</dd>
+	</dl>
+	<dl class="renhe-dl">
+		<dt>{{map ../i18n/label 2}}</dt>
+		<dd>
+		{{#is status "===" 1}}{{map ../i18n/text 3}}{{else}}{{startDate}}--{{endDate}}{{/is}}
+		</dd>
+	</dl>
+	<dl class="renhe-dl">
+		<dt>{{map ../i18n/label 7}}</dt>
+		<dd>{{experience.positionDesc}}</dd>
+	</dl>
+{{/each}}

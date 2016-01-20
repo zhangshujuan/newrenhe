@@ -1,0 +1,19 @@
+{{#each messages}}
+{{#is ../msgtype "not" 1}}<li action-type="show-helper" data-cid="helper:001" data-bind-lastmsg="helper:001">{{/is}}
+		<div class="media">
+		  <div class="media-left">
+		  		{{#if ../unReadCount}}
+		  		<span class="msg-status">{{../../unReadCount}}</span>
+		  		{{/if}}
+		  		<img class="media-object itu-img" src="{{staticDomainUrl '/images/iconfiletype/icon_markman_people@3x.png'}}">
+		  </div>
+		  <div class="media-body">
+		    <h4 class="media-heading text-overflow">{{../i18n.helper 0}}</h4>
+		    <p class="action-text">
+		    	{{content}}
+		    </p>
+		    <p class="action-time">{{calendar createdDate}}</p>
+		  </div>
+		</div>
+{{#is ../msgtype "not" 1}}</li>{{/is}}
+{{/each}}

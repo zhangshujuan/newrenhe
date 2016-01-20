@@ -1,0 +1,79 @@
+<div class="panel-heading clearfix">
+	<div class="pull-left"><span data-bind-renmai="group-{{type.value}}-name">{{name}}</span>
+	{{#is type.value ">" 0}}
+	(<span data-bind-renmai="group-{{type.value}}-count">{{num}}</span>)
+	{{/is}}
+	{{#is type.value "===" 0}}
+	(<span data-bind-renmai="group-notInGroupCount">{{num}}</span>)
+	{{/is}}
+	</div>
+	{{#is type.contact "===" "groupId"}}
+	{{#is type.value ">" 0}}
+	<div class="pull-right" node-type="groupManage" style="display:block;">
+		<a href="javascript:void(0);" node-type="rmEditGroup">{{map i18n 19}}</a>
+		<a href="javascript:void(0);" node-type="rmDelGroup">{{map i18n 20}}</a>
+	</div>
+	{{/is}}
+	{{/is}}
+</div>
+<div class="panel-body">
+	{{#is type.contact "===" "groupId"}}
+	{{#is type.value ">=" 0}}			
+	<div class="manageopt clearfix" style="display: block;">
+		<a href="javascript:void(0);" node-type="batch-manage">{{map i18n 12}}</a>
+		<!--<a class="pull-right" href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+	    	ÅÅÐò<span class="caret"></span>
+		</a>-->
+	</div>
+	{{/is}}
+	{{/is}}
+	<div class="manageopt clearfix" style="display: none;">                   
+		<a href="javascript:void(0);" class="mr20" node-type="addToGroup">{{map i18n 13}} <span class="caret"></span></a>
+		{{#is type.contact "===" "groupId"}}
+		{{#is type.value ">" 0}}
+		<a href="javascript:void(0);" class="mr20" node-type="removeItemsFromGroup">{{map i18n 14}}</a>
+		{{/is}}
+		{{/is}}
+		<!--<a href="javascript:void(0);" class="mr20">É¾³ýºÃÓÑ</a>-->
+		<a href="javascript:void(0);" node-type="cancelBatchManage">{{map i18n 15}}</a>
+		<a href="javascript:void(0);" class="pull-right" node-type="cancelBatchChoose">{{map i18n 16}}</a>
+		<span class="pull-right mr20">{{map i18n 17}}<span data-bind-renmai="chooseNum">0</span>{{map i18n 18}}</span>
+	</div>
+	<div class="renmai-manage-con" node-type="batch-list">
+		<ul class="clearfix">
+		{{#each spell.contactMemberVoListMap}}
+		{{#each this}}
+		<li class="def-card" data-id="{{id}}">
+			<div class="media">
+				<div class="media-left">
+					<a target="_blank" href="/viewprofile.xhtml?sid={{sid}}">
+					  <img class="media-object squ-img" src="{{userImg}}" alt="{{name}}">
+					</a>
+				</div>
+				<div class="media-body">
+					<h4 class="media-heading"><a target="_blank" href="/viewprofile.xhtml?sid={{sid}}" target="_blank">{{name}}</a></h4>
+					<p class="text-overflow">{{curTitle}}<br>{{curCompany}}</p>
+					<div class="cd-opt">
+						<div class="btn-group">
+					      <button type="button" class="btn btn-default" action-type="show-chat" data-create="create" data-cid="{{openId}}">{{map ../../i18n 0}}</button>
+					      <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+					        <span class="sr-only">Toggle Dropdown</span>
+					        <span class="icon-align-justify"></span>
+					      </button>
+					      <ul class="dropdown-menu">
+					        <!--<li><a href="javascript:void(0);" node-type="addOneToGroup" data-fid="{{id}}">{{map ../../i18n 1}}</a></li>-->
+					        <!--<li><a href="javascript:void(0);" node-type="shareFriend" data-sid="{{sid}}">{{map ../../i18n 2}}</a></li>-->
+					        <li><a href="javascript:void(0);" node-type="delFriend" data-fid="{{id}}">{{map ../../i18n 3}}</a></li>
+					      </ul>
+					    </div>
+					</div>
+					
+				</div>
+			</div>
+			<div class="markup_choose"></div>
+		</li>
+		{{/each}}
+		{{/each}}
+		</ul>
+	</div>
+</div>

@@ -1,0 +1,16 @@
+<ul>
+{{#each data}}
+	<li action-type="detail-link" data-cid="{{detailurl}}">
+		<div class="media">
+		  <div class="media-left">
+		      <img class="media-object itu-img" src="{{notifySenderInfo.userface}}" alt="...">
+		  </div>
+		  <div class="media-body">
+		    <h4 class="media-heading">{{notifySenderInfo.name}}</h4>
+		    <p class="action-text">{{notifySenderInfo.replyContent}}</p>
+			<p class="action-time">{{notifySenderInfo.createdDate}}</p>
+		  </div>
+		</div>
+	</li>
+{{/each}}
+</ul>

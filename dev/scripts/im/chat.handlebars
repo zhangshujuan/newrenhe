@@ -1,0 +1,18 @@
+<div class="panel panel-default chart-main" style="display:none;" id="chartMian-{{id}}" style="height: 432px;">
+	<div class="panel-body chatmsgs-content" style="height: 320px;">
+		<ul class="chart-content clearfix"></ul>
+	</div>
+	<div class="msgtext"></div>
+	<div class="panel-footer" node-type="chat-option">
+		<textarea class="form-control" id="messageChartContentInput{{id}}" rows="2" placeholder="{{i18n.enterText}}"></textarea>
+		<div class="clearfix mt10 chart-options">
+			<div class="pull-left chtrs-link">
+				<a class="btn btn-link" addfacepicid="messageChartContentInput{{id}}" href="javascript:void(0);" action-type="addChatFacePic"><em class="my-icon my-icon-face">&nbsp;</em> </a>
+				<a class="btn btn-link fileinput-button"><em class="my-icon my-icon-img">&nbsp;</em><input type="file" action-type="chatUploader" accept="image/*"></a>
+			</div>
+			<div class="btn-group pull-right">
+			  <button type="button" class="btn btn-danger" action-type="sendmsg" title="{{i18n.pressCtrEnter}}">{{i18n.send}}</button>
+			</div>
+		</div>
+	</div>
+</div>

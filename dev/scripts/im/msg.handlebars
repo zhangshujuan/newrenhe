@@ -1,0 +1,48 @@
+{{#is type "===" "more"}}
+<li class="chat-msg-more text-center"><a href="javascript:void(0);" node-type="more-msgs">{{map i18n.msgType 4}}</a></li>
+{{/is}}
+{{#each data}}
+
+	{{#is baseMessage.creatorType "not" 2}}
+	<li data-id="{{baseMessage.openIdEx.openId}}" {{#is ../../myOpenId "not" baseMessage.openIdEx.openId}}class="clearfix his-chart"{{else}}class="clearfix myself-chart"{{/is}}>
+		<a href="/profile/view.xhtml?openId={{baseMessage.openIdEx.openId}}" class="user-img">
+			<img class="media-object cmu-img" src="{{map ../../profile baseMessage.openIdEx.openId 'avatar'}}" alt="">
+		</a>
+		<p class="msg-wrap">
+			<em class="msg-arrow"></em>
+			<span class="chart-nick">{{map ../../profile baseMessage.openIdEx.openId 'nick'}}</span>
+			{{#is baseMessage.content.contentType "===" 1}}
+				<span class="chartmsg">
+		    		{{face baseMessage.content.textContent.text}}
+		    	</span>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 2}}
+	    		<span class="chartmsg">
+	    			<a href="{{baseMessage.content.photoContent.mediaId}}" target="_blank"><img src="{{baseMessage.content.photoContent.mediaId}}" style="max-width:100%;"></a>
+	    		</span>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 3}}
+	    	<span class="chartmsg">
+	    		<i class="im-audio" data-msg-id="{{baseMessage.messageId}}" style="width:{{operation baseMessage.content.audioContent.duration 'hh'}}px" data-media-time="{{baseMessage.content.audioContent.duration}}" data-media-id="{{baseMessage.content.audioContent.mediaId}}"></i>
+	    	</span>
+	    	<span class="im-audio-info">{{operation baseMessage.content.audioContent.duration 'mm'}}"</span>
+		    	{{#is receiverMessageStatus.readStatus "not" 2}}
+		    	<i class="im-audio-status"></i>
+		    	{{/is}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 4}}
+	    	<span class="chartmsg">
+	    	{{map ../../../i18n.msgType 2}}
+	    	</span>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 102}}
+	    	<span class="chartmsg">
+	    	{{map ../../../i18n.msgType 3}}
+	    	</span>
+	    	{{/is}}
+		</p>
+	</li>
+	{{else}}
+	<li class="chat-tips text-center">{{baseMessage.content.textContent.text}}</li>
+	{{/is}}
+{{/each}}

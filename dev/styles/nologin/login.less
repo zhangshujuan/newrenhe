@@ -1,0 +1,280 @@
+@import "../modules/mixins.less";
+.renhe-nologin-main {
+	background-color: #FFF;
+	min-width:1190px;
+}
+.main-header {
+	height: 577px;
+  	max-height: 100%;
+  	position: relative;
+  	overflow: hidden;
+  	.container {
+  		position: relative;
+  	}
+  	.renhe-logo {
+		background-image: url("@{version}/images/renhe_logo_index_opacity_134x66.png");
+		width: 134px;
+		height: 66px;
+		margin-top: 20px;
+	}
+	form {
+		width: 305px;
+		margin: 0 auto;
+	}
+	.form-control {
+		height:48px;
+		font-size:18px;
+	}
+	.renhe-login-title {
+		color: #FFF;
+		letter-spacing: 6px;
+  		margin-top: 50px;
+	}
+	.renhe-login-error {
+		height: 25px;
+		overflow: hidden;
+		margin-top: 20px;
+		margin-bottom: 8px;
+		> div {
+			margin-bottom: 2px;
+		}
+		label {
+			line-height: 23px;
+			margin-right: 5px;
+			margin-bottom: 0;
+			font-weight: normal;
+			color: #eb5441;
+			background-color: #fff;
+			padding: 0 10px;
+			border-radius: 4px;
+			.box-shadow(inset 0 1px 1px rgba(0,0,0,.075));
+  			.transition(~"border-color ease-in-out .15s, box-shadow ease-in-out .15s");
+		}
+	}
+	.checkbox,.checkbox a {
+		color: #d5d5d5;
+	}
+	.btn {
+		padding: 12px 0;
+		font-size:18px;
+	}
+	button[type="submit"] {
+		width: 220px;
+	}
+	a.btn {
+		width: 80px;
+	}
+	.renhe-login-download {
+		width: 305px;
+		margin: 0 auto;
+		position: absolute;
+		bottom: 38px;
+		left:50%;
+		margin-left: -152px;
+		overflow: hidden;
+		ul {
+			width: 315px;
+		}
+		li {
+			float: left;
+			margin-right: 7px;
+		}
+		h3 {
+			color: #fefefe;
+			margin-bottom: 14px;
+
+			i {
+				border-top: 1px solid #fefefe;
+				width: 106px;
+			}
+			i,span {
+				float: left;
+			}
+			span {
+				margin-top: -8px;
+				padding: 0 17px;
+				font-size: 14px;
+			}
+		}
+	}
+}
+.cover-bg {
+	position: absolute;
+	width:100%;
+	height:100%;
+	background-image: url("@{version}/images/renheindexbefore_1900x577.jpg");
+	background-repeat:no-repeat;
+	background-position: center top;
+}
+.renhe-login-content {
+	width: 398px;
+	height: 577px;
+	background: url("@{version}/images/renhe_login_bankground_398x577.png");
+	position: absolute;
+	right: 0;
+	top: 0;
+	.form-group {
+		margin: 0 0 12px 0;
+	}
+}
+.w-icon {
+	background-image: url("@{version}/images/prosprite_772x500.png");
+	width: 102px;
+	height: 102px;
+	display: inline-block;
+	&-trm,&-zzz,&-xsj,&-lxm,&-qhd,&-zlt {
+		width: 85px;
+		height: 85px;
+	}
+	&-trm {
+		background-position: -17px -400px;
+	}
+	&-zzz {
+		background-position: -142px -400px;
+	}
+	&-xsj {
+		background-position: -265px -400px;
+	}
+	&-lxm {
+		background-position: -390px -400px;
+	}
+	&-qhd {
+		background-position: -515px -400px;
+	}
+	&-zlt {
+		background-position: -640px -400px;
+	}
+	&-jr {
+		background-position: 0 -143px;
+	}
+	&-dc {
+		background-position: -134px -143px;
+	}
+	&-jy {
+		background-position: -269px -143px;
+	}
+	&-zz {
+		background-position: -402px -143px;
+	}
+	&-kj {
+		background-position: -538px -143px;
+	}
+	&-fw {
+		background-position: -670px -143px;
+	}
+}
+.renhe-info-main{
+	padding: 30px;
+	h2.w-title {
+		font-size: 42px;
+		text-align: center;
+	}
+	p.w-sub {
+		.center-block();
+		text-align: center;
+		font-size: 16px;
+	    	line-height: 25px;
+	    	color: #777;	
+	}
+	.rh-info-list {
+		margin-top: 50px;
+		padding-left: 80px;
+		> li {
+			min-width:110px;
+			margin-bottom:20px;
+			float: left;
+			text-align: left;
+			&.col-md-6 {
+				margin-top: 80px;
+			}
+			&.col-md-4 .w-con {
+				width: 70%;
+			}
+			&.col-md-6 .w-con {
+				width: 50%;
+			}
+			.w-con {
+				color: #333;
+				i {
+					float: left;
+					margin-right: 7px;
+				}
+				h3 {
+					margin-top: 5px;
+				}
+				p {
+					font-size: 16px;
+					line-height: 22px;
+					color: #777;
+					margin-top:10px;
+				}
+			}
+		}
+	}
+	.rh-circle-list {
+		margin: 45px 0;
+		> li {
+			text-align: center;
+			> a:hover,&.active a {
+				background-position-y:-263px;
+			}
+		}
+	}
+	.rh-circle-content {
+		.cc-img-info {
+			padding: 150px 100px;
+		}
+	}
+}
+.renhe-reg-login {
+	padding: 10px 61px;
+  	font-size: 18px;
+}
+.renhe-reg-login-o {
+	background:#fff;
+	color:#eb5441;
+}
+.renhe-app-download {
+	padding-top: 45px;
+	padding-bottom:45px;
+	.clearfix();
+}
+.w-pur {
+	color:#7f5fc7;
+}
+
+/* 行业圈会员展示 */
+.industry-content{margin: 25px 0;position:relative;width:1190px;margin-left:auto;margin-right:auto}
+.industry-carousel{width:1190px;height:560px;overflow:hidden}
+.industry-carousel .item{display:block}
+.industry-carousel img{display:block}
+
+
+
+.industry-carousel .item{width:360px;text-align:center;padding-top:130px;margin:0 18px;float:left;border-bottom:3px solid #fff}
+.industry-carousel .item:hover{border-bottom:4px solid #eb5441}
+.industry-carousel .item .userimg{background-color:#fff;position:relative;height:135px}
+.industry-carousel .item .userimg a{position:absolute;background-color:#fff;display:block;padding:15px;border-radius:50%;top:-123px;left:50%;margin-left:-125px}
+.industry-carousel .item .userimg img{width:220px;height:220px;border-radius:50%}
+.industry-content .user-info{background-color:#fff;padding:0 28px 25px 28px}
+.industry-content .user-name,
+.industry-content .lkto{font-size:16px;color:#000;line-height:22px;height:30px;margin:0}
+.industry-content .user-title{font-weight:normal;font-size:14px;color:#999;line-height:22px;height:30px;margin:0 0 20px 0}
+.industry-content .user-intro{font-size:16px;color:#999;line-height:22px;height:120px;margin-bottom:35px;text-align:left}
+.industry-content .prev{position:absolute;left:-70px}
+.industry-content .next{position:absolute;right:-70px}
+.industry-content .industry-buttons{position:absolute;top:285px;display:inline-block;width:70px;height:70px;border-radius:50%;background-image:url("@{version}/images/icon_circle_arrow_20151120_150x229.png")}
+.industry-content .next{background-position:-80px 0}
+.industry-content .next.disabled,
+.industry-content .next.disabled:hover{background-position:-80px -159px}
+.industry-content .next:hover{background-position:-80px -80px}
+.industry-content .prev{background-position:0 0}
+.industry-content .prev:hover{background-position:0 -80px}
+.industry-content .prev.disabled,
+.industry-content .prev.disabled:hover{background-position:0 -159px}
+
+@media (max-width: 1350px) {
+	.industry-content {width:980px;}
+	.industry-carousel {width:980px;}
+	.industry-carousel .item{width:300px;margin:0 12px;}	
+}

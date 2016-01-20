@@ -1,0 +1,58 @@
+{{#is type "===" "contact"}}
+	{{#is data.email "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 14}}</dt>
+		<dd>{{data.email}}</dd>
+	</dl>
+	{{/is}}
+	{{#is data.mobile "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 15}}</dt>
+		<dd data-bind-contact="mobile">{{data.mobile}}</dd>
+	</dl>
+	{{/is}}
+	{{#is data.weixin "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 16}}</dt>
+		<dd data-bind-contact="weixin">{{data.weixin}}</dd>
+	</dl>
+	{{/is}}
+	{{#is data.email "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 17}}</dt>
+		<dd data-bind-contact="qq">{{data.qq}}</dd>
+	</dl>
+	{{/is}}
+	{{#is data.tel "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 18}}</dt>
+		<dd data-bind-contact="tel">{{data.tel}}</dd>
+	</dl>
+	{{/is}}
+	{{#is data.fax "not" ""}}
+	<dl class="renhe-dl">
+		<dt>{{map i18n.label 19}}</dt>
+		<dd data-bind-contact="fax">{{data.fax}}</dd>
+	</dl>
+	{{/is}}
+{{/is}}
+{{#is type "===" "other"}}
+{{#is data.interests "not" ""}}
+<dl class="renhe-dl">
+	<dt>{{map i18n.label 20}}</dt>
+	<dd data-bind-other="interests">{{data.interests}}</dd>
+</dl>
+{{/is}}
+{{#is data.associations "not" ""}}
+<dl class="renhe-dl">
+	<dt>{{map i18n.label 21}}</dt>
+	<dd data-bind-other="associations">{{data.associations}}</dd>
+</dl>
+{{/is}}
+{{#is data.awards "not" ""}}
+<dl class="renhe-dl">
+	<dt>{{map i18n.label 22}}</dt>
+	<dd data-bind-other="awards">{{data.awards}}</dd>
+</dl>
+{{/is}}
+{{/is}}

@@ -1,0 +1,269 @@
+@import "mixins.less";
+//@font-face {font-family:FZLTZHUNHJW; src: url("/fonts/FZLTZHUNHJW.ttf")}
+body {
+	font-family: 'PingFang SC', 'Helvetica Neue', Helvetica, Arial, Verdana, 'Hiragino Sans GB', 'Noto Sans CJK SC', 'Source Han Sans CN', STHeiti, 'Microsoft YaHei', 'WenQuanYi Micro Hei', SimSun, sans-serif;}
+.container {
+	width:970px;
+}
+a:hover {
+	outline: 0 !important;
+	text-decoration: none !important;	
+}
+a:link,
+a:visited,
+a:active {
+	outline: 0 !important;
+	text-decoration: none !important;		
+}
+input::-webkit-input-placeholder, textarea::-webkit-input-placeholder {
+  color: #a0a0a0 !important;
+}
+ul {
+	list-style:none;
+	padding:0;
+	margin:0;
+}
+.rh-md-12 {
+	width: 100%;
+}
+.no-border {
+	border: 0 !important;
+	&:focus {
+		border: 0 !important;
+		outline: 0;
+	}
+}
+.text-yellow {
+	color: #f1aa38;
+}
+.text-purple-1 {
+	color: #844592;
+}
+.text-purple {
+	color: #ac57e9;
+}
+.text-overflow {
+	.text-overflow();
+}
+.clearfix:after { 
+    visibility: hidden; 
+    display: block; 
+    font-size: 0; 
+    content: " "; 
+    clear: both; 
+    height: 0; 
+} 
+.clearfix{
+	*zoom:1;
+}
+.fileinput-button{
+	position: relative;
+  	overflow: hidden;
+	input {
+	  position: absolute;
+	  top: 0;
+	  right: 0;
+	  margin: 0;
+	  opacity: 0;
+	  -ms-filter: 'alpha(opacity=0)';
+	  font-size: 200px;
+	  direction: ltr;
+	  cursor: pointer;
+	}
+}
+.mt {
+	&10 {
+		margin-top:10px;
+	}
+	&20 {
+		margin-top: 20px !important;
+	}
+	&30 {
+		margin-top:30px;
+	}
+	&40 {
+		margin-top: 40px !important;
+	}
+}
+.mb {
+	&10 {
+		margin-bottom:10px;
+	}
+	&20 {
+		margin-bottom: 20px !important;
+	}
+	&30 {
+		margin-bottom:30px;
+	}
+	&40 {
+		margin-bottom: 40px !important;
+	}
+}
+.mr {
+	&30 {
+		margin-right: 30px;
+	}
+	&20 {
+		margin-right: 20px;
+	}
+	&10 {
+		margin-right: 10px;
+	}
+	&5 {
+		margin-right: 5px;
+	}
+}
+.gotop{
+	position: fixed;
+	_position: absolute;
+	bottom: 144px;
+	_bottom: auto;
+	left: 50%;
+  	margin-left: 490px;
+  	cursor: pointer;
+}
+.panel-default {
+	  border-color: transparent;
+	  border-radius: 0;
+}
+.level {
+	position: absolute;
+    left: 54px;
+    top: 44px;
+	&-icon {
+		background-image: url("@{version}/images/renhe_dengji_icon.png");
+		background-repeat:no-repeat;
+		display:inline-block;
+		width:28px;
+		height:28px;
+		&-plat {
+			background-position:-122px 0;
+		}
+		&-gold {
+			background-position:-81px 0;
+		}
+		
+		&-auth {
+			background-position:0 0;
+		}
+		&-vip {
+			background-position:-41px 0;
+		}
+	}
+}
+.level-sm {
+	.level {
+		position: absolute;
+	    left: 32px;
+	    top: 34px;
+	}
+	.level-icon {
+		width:20px;
+		height:20px;
+		&-plat {
+			background-position:-122px -34px;
+		}
+		&-gold {
+			background-position:-81px -34px;
+		}
+		
+		&-vip {
+			background-position:-41px -34px;
+		}
+		&-auth {
+			background-position:0 -34px;
+		}
+	}
+}
+.my-icon {
+	background-image: url("@{version}/images/square_icon_1201.png");
+	background-repeat:no-repeat;
+	display:inline-block;
+	&-cog {
+		width:25px;
+		height:25px;
+		background-position:5px -29px;
+		&:hover {
+			background-position:-36px -29px;
+		}
+	}
+	&-face {
+		width:18px;
+		height:18px;
+		background-position:1px -64px;
+	}
+	&-img {
+		width:18px;
+		height:18px;
+		background-position:-1px -94px;
+	}
+	&-trz {
+		width:18px;
+		height:18px;
+		background-position:1px -124px;
+	}
+	/*&-commit {
+		width:17px;
+		height:18px;
+		background-position:-2px -197px;
+		margin-top:3px;
+	}
+	&-heart {
+		width:18px;
+		height:18px;
+		background-position:-1px -161px;
+	}*/
+	&-backtop {
+		width:50px;
+		height:50px;
+		background-position:0 -224px;
+		&:hover {
+			background-position:-52px -224px;
+		}
+	}  
+}
+a.btn-link.disabled .my-icon-heart,
+a.btn-link[disabled] .my-icon-heart,
+a:hover.btn-link .my-icon-heart {
+	background-position:-39px -161px;
+}
+.squ-img {
+	width:50px;
+	height:50px;
+	border-radius: 50%;
+}
+.cmu-img {
+	width:30px;
+	height:30px;
+	border-radius: 50%;
+}
+.itu-img {
+	width:40px;
+	height:40px;
+	border-radius: 50%;
+}
+.lgu-img {
+	width:70px;
+	height:70px;
+	border-radius: 50%;
+	margin-left: 10px;
+}
+.hide {
+	display:none;
+}
+.img-center-box {
+	display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    *display: block;
+    *font-family:Arial;
+    > img {
+    	vertical-align: middle;
+    }
+}
+.row.min-height {
+	height:758px; /* 内容太少的页面增加最小高度 */ 
+}
+.font-red{
+  color: #f7574b;
+}

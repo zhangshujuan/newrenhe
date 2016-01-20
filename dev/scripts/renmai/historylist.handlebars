@@ -1,0 +1,34 @@
+{{#is data.successFlag "===" true}}
+{{#is data.outlookNotBeenMemberList "len>" 0}}
+<form node-type="afterImportForm" class="after-email-form" action="{{action}}" data-remote="true" data-type="json" method="post">
+<input type="hidden" name="outlookIds" value="" id="sendEmailUserIds">
+<input type="hidden" name="inviteEmailType" value="" id="inviteEmailType">
+<div class="text-center">
+	<button class="btn btn-danger" type="submit">{{map text 23}}</button>
+</div>
+<div class="rm-select-widget mt30" node-type="select-scoll">
+	<div class="checkbox ckhead" node-type="ss-head">
+		<label class="clearfix">
+            <input type="checkbox" value="" checked>{{map text 26}}
+			<div class="pull-right">{{map text 27}}<span data-bind-renmai="emaiselect-num">{{map data.outlookNotBeenMemberList 'length'}}</span>{{map text 28}}</div>
+		</label>
+    </div>
+	<div class="scoll-box overflow-scrollbar" node-type="ss-box">
+		
+		{{#each data.outlookNotBeenMemberList}}
+    	<div class="checkbox">
+    		<label class="clearfix">
+                <input type="checkbox" value="{{id}}" checked>{{userName}}
+    			<span class="pull-right">{{userEmail}}</span>
+    		</label>
+        </div>
+        {{/each}}
+	</div>
+</div>
+</form>
+{{else}}
+<p class="text-center"><i class="icon-exclamation-sign"></i>{{map text 30}}</p>
+{{/is}}
+{{else}}
+<p class="text-center"><i class="icon-remove-sign"></i>{{safeString data.errorMsg}}</p>
+{{/is}}

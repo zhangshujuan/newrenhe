@@ -1,0 +1,58 @@
+@import "../modules/mixins.less";
+.reg {
+	&-wrap {
+		padding: 1px;
+		background-color: #fff;
+		width: 950px;
+		.info {
+			> h1 {
+				font-size: 43px;
+				color: #434343;
+			}
+			> p {
+				font-size: 21px;
+				color: #8b8989;
+			}
+		}
+		.control-label {
+			padding-right: 0;
+		}
+		
+	}
+	&-input {
+		width: 186px;
+		display: inline-block;
+	}
+	&-input-auto {
+		width: auto;
+		display: inline-block;
+	}
+	&-form {
+		width: 782px;
+		margin-top: 35px;
+		margin-bottom: 35px;
+		.form-group {
+		
+			.icon-caret-right {
+				font-size: 16px;
+				margin-right: 5px;
+			}
+			.icon-ok-sign {
+				color: #9c3;
+				font-size: 18px;
+			}
+			.message,
+			.error {
+				font-weight: normal;
+				font-size: 12px;
+			}
+			.message {
+				color: #444;
+				display: none;
+			}
+			.error {
+				color: red;
+			}
+		}
+	}
+}

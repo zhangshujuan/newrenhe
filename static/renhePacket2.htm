@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="GBK">
+    <title>Index</title>
+</head>
+
+<body>
+    <style>
+    .get_gift_lct,
+    .rule_lct {
+        text-align: center;
+        margin: 0 auto 20px auto;
+        cursor: pointer;
+    }
+    
+    #prompt_lct img {
+        display: block;
+        margin: 20px auto 20px auto;
+        width: 100px;
+        height: 100px;
+    }
+    
+    );
+    #prompt_lct {
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+        z-index: 9999;
+        display: none;
+    }
+    
+    .get_gift_lct {
+        width: 321px;
+        color: #d73538;
+        background: #ffd33c;
+        height: 46px;
+        line-height: 46px;
+        font-size: 24px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+    }
+    
+    );
+    .rule_lct {
+        color: #fff;
+        font-family: Microsoft YaHei;
+        font-size: 22px;
+    }
+    
+    #out_lct {
+        width: 444px;
+        height: 623px;
+        position: absolute;
+        top: 50%;
+        z-index: 999;
+        margin-top: -311.5px;
+        box-sizing: border-box;
+        font-family: 'Microsoft YaHei';
+    }
+    
+    #prompt_lct img {
+        display: block;
+        margin: 20px auto 20px auto;
+        width: 100px;
+        height: 100px;
+    }
+    
+    #prompt_lct {
+        text-align: center;
+        width: 200px;
+        height: 200px;
+        background: rgba(0, 0, 0, 0.35);
+        color: #fff;
+        font-size: 16px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -100px;
+        margin-left: -100px;
+        z-index: 9999;
+        display: none;
+    }
+    
+    .get_gift_lct {
+        width: 321px;
+        color: #d73538;
+        background: #ffd33c;
+        height: 46px;
+        line-height: 46px;
+        font-size: 24px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+    }
+    
+    .rule_lct {
+        color: #fff;
+        font-family: 'Microsoft YaHei';
+        font-size: 22px;
+    }
+    
+    #out_lct {
+        width: 444px;
+        height: 623px;
+        position: absolute;
+        left: 0;
+        top: 50%;
+        z-index: 999;
+        margin-top: -311.5px;
+        box-sizing: border-box;
+        font-family: 'Microsoft YaHei';
+    }
+    
+    #left_gift_lct1 {
+        width: 444px;
+        height: 623px;
+        box-sizing: border-box;
+        background: url(http://s2.renhe.cn/images/xuanfuhlhcf_20151229_444x623.png) no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+    }
+    
+    .get_gift_box_lct {
+        width: 444px;
+        height: 623px;
+        box-sizing: border-box;
+        background: url(http://www.hecaifu.com/activity/renhe/img/gift_get_bg.png) no-repeat;
+        background-size: 100% 100%;
+        overflow: hidden;
+        display: none
+    }
+    
+    #left_gift_lct1 .input_phone1 {
+        display: block;
+        margin: 318px auto 13px auto;
+        width: 284px;
+        height: 45px;
+        line-height: 45px;
+        padding-left: 37px;
+        font-size: 20px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        out-line: none;
+        border: none;
+        font-family: 'Microsoft YaHei';
+    }
+    
+    .next_get_code_lct {
+        overflow: hidden;
+        clear: both;
+        width: 323px;
+        margin: 0 auto 19px auto;
+        height: 55px;
+    }
+    
+    .left_lct input {
+        display: block;
+        width: 154px;
+        padding-left: 37px;
+        height: 45px;
+        line-height: 45px;
+        font-family: 'Microsoft YaHei';
+        font-size: 20px;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        border: none;
+    }
+    .left_lct,
+    .right_lct {
+        float: left;
+        position: relative;
+        overflow: hidden;
+        height: 57px;
+    }
+    .right_lct {
+        width: 117px;
+        margin-left: 13px;
+    }
+    .send_code_lct,
+    .time_lct {
+        height: 45px;
+        line-height: 45px;
+        width: 117px;
+        text-align: center;
+        font-family: 'Microsoft YaHei';
+        font-size: 20px;
+        position: absolute;
+        top: 0 ;
+        left: 0;
+    }
+    .send_code_lct {
+        background: #ffdc3b;
+        color: #d93f38;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        cursor: pointer;
+    }
+    .time_lct {
+        background: #999;
+        color: #fff;
+        border-radius: 15px;
+        -webkit-border-radius: 15px;
+        -moz-border-radius: 15px;
+        display: none;
+    }
+    .gift_val_box_lct {
+        margin: 360px auto 20px auto;
+        width: 280px;
+        height: 125px;
+        background: url(http://www.hecaifu.com/activity/renhe/img/gift_bg.png) no-repeat;
+        background-size: 100% 100%;
+        font-weight: bold;
+        color: #d22912;
+        font-size: 30px;
+        clear: both;
+        overflow: hidden;
+    }
+    .gift_text_lct {
+        float: left;
+        width: 70px;
+        height: 125px;
+        text-align: center;
+        overflow: hidden;
+    }
+    .right_gift_money {
+        float: left;
+        width: 210px;
+        height: 125px;
+        font-size: 40px;
+        text-align: center;
+        line-height: 125px;
+    }
+    .text_red_lct {
+        margin-top: 20px;
+    }
+    .text_desc_lct {
+        width: 280px;
+        text-align: center;
+        margin: 0 auto 10px auto;
+    }
+    .tel_num_lct {
+        color: #fed72d;
+    }
+    #download_lct_a {
+        display: block;
+        width: 200px;
+        heihgt: 40px;
+        line-height: 40px;
+        text-align: center;
+        margin: 20px auto 0px auto;
+        color: #2a0905;
+        text-decoration: none;
+        background: url(http://www.hecaifu.com/activity/renhe/img/box_bg2.png) no-repeat;
+        background-size: 100% 100%;
+    }
+    
+    .input_phone1,
+    .input_yzm_lct {
+        outline: none;
+    }
+    </style>
+    <div id="out_lct">
+        <div id="mask_lct"></div>
+        <div id="prompt_lct" class="message_popup"><img src="http://www.hecaifu.com/activity/renhe/img/message.png" />
+            <p class="popup_text">输入不正确</p>
+        </div>
+        <div id="left_gift_lct1">
+            <input type="text" placeholder="请输入手机号" class="input_phone1" />
+            <div class="next_get_code_lct">
+                <div class="left_lct">
+                    <input type="text" placeholder="请输入验证码" class="input_yzm_lct">
+                </div>
+                <div class="right_lct">
+                    <div class="send_code_lct">获取验证码</div>
+                    <div class="time_lct"><span>90</span>秒后重新获取</div>
+                </div>
+            </div>
+            <div class="get_gift_lct">立即领取</div>
+            <div class="rule_lct" data-href="http://devw.renhe.cn/viewprofile.xhtml">使用规则</div>
+        </div>
+        <div class="get_gift_box_lct">
+            <div class="gift_val_box_lct">
+                <div class="gift_text_lct">
+                    <div class="text_red_lct">红</div>
+                    <div>包</div>
+                </div>
+                <div class="right_gift_money">￥100元<span></span></div>
+            </div>
+            <div class="text_desc_lct">红包已放入账户：<span class="tel_num_lct"></span>下载和财富APP享受更多红包活动</div><a href="http://www.hecaifu.com/activity/apk/hecaifu_heliao_v1.3.3_user.apk" id="download_lct_a">下载和财富APP</a></div>
+    </div>
+    <script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script>
+    $(function() {
+        /*operate js*/
+        /*url 参数提取*/
+        /*url 参数提取*/
+    $('.send_code_lct').on('click', function() {
+        var tel = $('.input_phone1').val(); /*输入的手机号码*/
+        var telReg = !!tel.match(/^(0|86|17951)?(13[0-9]|15[012356789]|17[678]|18[0-9]|14[57])[0-9]{8}$/);
+        /*手机号码格式不对*/
+        if (telReg == false) {
+            $('.message_popup').show();
+            $('.popup_text').text('请输入正确的手机号码');
+            var settimeout = setTimeout(function() {
+                    $('.message_popup').hide();
+                }, 3000)
+                /*手机号码格式不对*/
+                /*手机号码格式对*/
+        } else {
+
+            $('.send_code_lct').hide();
+            $('.time_lct').show();
+            /*倒计时*/
+            var sp_second_val = $('.time_lct span').text();
+            var interval1 = setInterval(function() {
+                sp_second_val--;
+                $('.time_lct span').text(sp_second_val);
+                if (sp_second_val == 0) {
+                    clearInterval(interval1);
+                    $('.time_lct span').text('90');
+                    $('.time_lct').hide();
+                    $('.send_code_lct').show().text('重新获取');
+                }
+            }, 1000);
+            /*倒计时*/
+            $.ajax({
+                type: "get",
+                async: false,
+                url: "http://m.hecaifu.com//ajax//sendMobileCode.shtml",
+                data: {
+                    "mobile": tel,
+                    "deviceInfo": 'android'
+                },
+                dataType: "jsonp",
+                jsonp: "callback",
+                jsonpCallback: "get_number",
+                success: function(data) {
+                    //console.log(data);
+                },
+                error: function(error) {
+                    console.log('fail');
+                }
+            });
+        };
+        /*手机号码格式对*/
+    });
+    $('.get_gift_lct').on('click', function() {
+        var tel_past = $('.input_phone1').val(); //输入电话号码
+        var verification_code = $('.left_lct input').val(); //输入的验证码
+        /*请求登录接口*/
+        $.ajax({
+            type: "get",
+            async: false,
+            url: "http://m.hecaifu.com//ajax//hongbaoLogin.shtml",
+            data: {
+                "mobile": tel_past,
+                "mobileCode": verification_code,
+                "deviceInfo": 'android'
+            },
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "login_in",
+            success: function(data) {
+                if (data.code == 1) {
+                    $('#left_gift_lct1').hide();
+                    $('.get_gift_box_lct').show();
+                    /*请求红包信息接口*/
+                    $.ajax({
+                        type: "get",
+                        async: false,
+                        url: "http://m.hecaifu.com// getRenheHongbao /index.shtml",
+                        data: {
+                            "mobile": tel_past
+                        },
+                        dataType: "jsonp",
+                        jsonp: "callback",
+                        jsonpCallback: "get_gift",
+                        success: function(data) {
+                            console.log(data);
+                            if (data.code == 0000) {
+                                $('.tel_num_lct').text(tel_past);
+                            } else if (data.code == 1001) {
+                                $('.text_desc_lct').hide();
+                                $('.right_gift_money').text('您领取过了哦').css({
+                                    'font-size': '25px'
+                                });
+                            };
+                        },
+                        error: function(error) {
+                            $('.text_value_1,.sp_text_01').hide();
+                            $('.text_value_2,.sp_no_gift').show();
+                            console.log('fail');
+                        }
+                    });
+                    /*请求红包信息接口*/
+                } else {
+                    $('.get_gift_lct').show();
+                    $('.message_popup').show();
+                    $('.popup_text').text('你输入的验证码不正确');
+                    var settimeout = setTimeout(function() {
+                        $('.message_popup').hide();
+                    }, 3000);
+                }
+            },
+            error: function(error) {
+                console.log('fail');
+            }
+        });
+        /*请求登录接口*/
+    });
+    /*operate js*/
+     /*获取摸个字符串中的属性的对应值*/
+        function getFieldVal(str, flag, flagsubstr, field) {
+            //str 需要处理的字符串,以flag位标记分割成数组,以flagsubstr为标记取字段和值,field需要取哪个字段的值
+            var returnPart = "";
+            var array1 = [];
+            var strOperate = "";
+            if (str.indexOf(field) != -1) {
+                strOperate = str;
+                if (strOperate.indexOf(flag) != -1) {
+                    array1 = strOperate.split(flag);
+                    for (var i = 0; i < array1.length; i++) {
+                        if (array1[i].indexOf(field) != -1) {
+                            returnPart = array1[i].split(flagsubstr)[1];
+                        }
+                    }
+                } else {
+                    returnPart = strOperate.split(flagsubstr)[1];
+                }
+            } else {
+                returnPart = "";
+            }
+            return returnPart;
+        }
+        /*获取摸个字符串中的属性的对应值*/
+        var locationsearch = window.location.search;
+        var mobile=getFieldVal(locationsearch,"&","=","mobile");
+        $('.input_phone1').val(mobile);
+        $.ajax({
+            type: "get",
+            async: false,
+            url: "http://m.hecaifu.com// checkMemberMobileStatus/index.shtml",
+            data: {
+                "mobile": mobile
+            },
+            dataType: "jsonp",
+            jsonp: "callback",
+            jsonpCallback: "checkMemberMobileStatus",
+            success: function(data) {
+                var code = data.code;
+                if (code == 1001) {
+                	$('#left_gift_lct1').hide();
+                	$('.get_gift_box_lct').show();
+
+                  $('.text_desc_lct').hide();
+                                $('.right_gift_money').text('您领取过了哦').css({
+                                    'font-size': '25px'
+                                });
+                }
+            },
+            error: function(error) {
+                console.log('fail');
+            }
+        });
+
+    /*js end*/
+});
+	</script>
+</body>
+
+</html>

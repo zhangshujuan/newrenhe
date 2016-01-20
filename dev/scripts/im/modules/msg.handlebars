@@ -1,0 +1,75 @@
+{{#each data}}
+	
+	{{#is baseMessage.creatorType "not" 2}}
+	{{#is hideTime "not" true}}
+	<li class="chat-times"><span>{{dateFormat baseMessage.createdAt "YYYY-MM-DD HH:mm:ss"}}</span></li>
+	{{/is}}
+	<li data-id="{{baseMessage.openIdEx.openId}}" {{#is ../../openId "not" baseMessage.openIdEx.openId}}class="clearfix his-chart"{{else}}class="clearfix myself-chart"{{/is}}>
+		<a href="/profile/view.xhtml?openId={{baseMessage.openIdEx.openId}}" class="user-img">
+			<img class="media-object cmu-img" data-avatar="{{baseMessage.openIdEx.openId}}" src="http://s1.renhe.cn/images/headnone_50.jpg" alt="">
+		</a>
+		<div class="msg-wrap">
+			{{#is ../../conv.isSingleChat "not" true}}
+			<em class="msg-arrow"></em>
+			<span class="chart-nick" data-nick="{{baseMessage.openIdEx.openId}}">{{baseMessage.openIdEx.openId}}</span>
+			{{else}}
+			<em class="msg-arrow single"></em>
+			{{/is}}
+			{{#is baseMessage.content.contentType "===" 1}}
+				<span class="chartmsg">
+		    		{{imMsgTxt baseMessage.content.textContent.text}}
+		    	</span>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 2}}
+	    		<span class="chartmsg">
+	    			<a href="{{baseMessage.content.photoContent.imageUrl}}" target="_blank"><img class="im-msgimg" src="{{baseMessage.content.photoContent.imageUrl}}" style="max-width:100%;"></a>
+	    		</span>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 3}}
+	    	<span class="chartmsg">
+	    		<i class="im-audio" data-msg-id="{{baseMessage.messageId}}" style="width:{{operation baseMessage.content.audioContent.duration 'hh'}}px" data-media-time="{{baseMessage.content.audioContent.duration}}" data-media-id="{{baseMessage.content.audioContent.mediaId}}"></i>
+	    	</span>
+	    	<span class="im-audio-info">{{operation baseMessage.content.audioContent.duration 'mm'}}"</span>
+		    	{{#is receiverMessageStatus.readStatus "not" 2}}
+		    	<i class="im-audio-status"></i>
+		    	{{/is}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 4}}
+	    	<div class="chartmsg filecontent">
+	    	{{!map ../../../i18n.msgType 2}}
+		    	<div class="clearfix">
+		    		{{iconFileType baseMessage.content.fileContent.fileType class="media-object squ-img pull-left"}}
+		    		<p class="text-overflow" title="{{baseMessage.content.fileContent.fileName}}">{{baseMessage.content.fileContent.fileName}}</p>
+		    		<div class="gray"><span class="pull-left">{{operation baseMessage.content.fileContent.fileSize "size_k"}}k</span><a href="{{baseMessage.content.fileContent.mediaIdUrl}}" class="pull-right">{{map ../../../i18n.msgType 6}}</a></div>
+	    		</div>
+	    	</div>
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 102}}
+	    	<div class="chartmsg clearfix attachments">
+	    		{{#each baseMessage.content.attachments}}
+	    		{{#chatIsCard url}}
+	    		<a href="/viewprofile.xhtml?sid={{map this 1}}" target="_blank" class="attachments-card">
+	    			<h5>{{../extension.title}}</h5>
+		    		<div class="clearfix">
+		    			<img src="{{../extension.picUrl}}" class="media-object squ-img pull-left">
+		    			{{face ../extension.text}}
+		    		</div>
+	    		</a>
+	    		{{else}}
+	    		<a href="{{this}}" target="_blank" class="attachments-link">
+	    			<span>{{../extension.title}}</span>
+		    		<div class="cf">
+		    			<img src="{{../extension.picUrl}}" class="media-object squ-img pull-left">
+		    			{{../extension.text}}
+		    		</div>
+	    		</a>
+	    		{{/chatIsCard}}
+	    		{{/each}}
+	    	</div>
+	    	{{/is}}
+		</div>
+	</li>
+	{{else}}
+	<li class="chat-tips text-center">{{baseMessage.content.textContent.text}}</li>
+	{{/is}}
+{{/each}}

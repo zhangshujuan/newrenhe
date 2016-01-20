@@ -1,0 +1,75 @@
+{{#is type "===" "new"}}
+<li action-type="show-chat" data-cid="{{data.baseConversation.conversationId}}" data-bind-lastmsg="{{data.baseConversation.conversationId}}">
+{{/is}}
+{{#is data/baseConversation.type "===" 1}}
+	<div class="media">
+	{{#each data.lastMessages}}
+	  <div class="media-left">
+	  {{#is ../noRead "===" true}}
+	  	<span class="msg-status"></span>
+	  {{/is}}
+	      <img class="media-object itu-img" model="img|nick" src="{{map ../listProfile ../openId 'avatar'}}" alt="{{map ../listProfile baseMessage.openIdEx.openId 'nick'}}">
+	  </div>
+	  <div class="media-body">
+	    <h4 class="media-heading" model="nick">{{map ../listProfile ../openId 'nick'}}</h4>
+	    <p class="action-text">
+	    	{{#is baseMessage.content.contentType "===" 1}}
+	    	{{face baseMessage.content.textContent.text}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 2}}
+	    	{{map ../../i18n 0}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 3}}
+	    	{{map ../../i18n 1}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 4}}
+	    	{{map ../../i18n 2}}
+	    	{{/is}}
+	    	{{#is baseMessage.content.contentType "===" 102}}
+	    	{{map ../../i18n 3}}
+	    	{{/is}}
+	    </p>
+	    <p class="action-time">{{calendar baseMessage.createdAt}}</p>
+	  </div>
+	  {{/each}}
+	</div>
+{{/is}}
+{{#is data/baseConversation.type "===" 2}}
+<div class="media">
+  <div class="media-left">
+  {{#is noRead "===" true}}
+  	<span class="msg-status"></span>
+  {{/is}}
+      <img class="media-object itu-img" src="{{data/baseConversation.icon}}" alt="{{data/baseConversation.title}}">
+  </div>
+  <div class="media-body"> 
+    <h4 class="media-heading" model="nick">{{data/baseConversation.title}}</h4>
+    {{#each data.lastMessages}}
+    <p class="action-text">
+    	{{#is baseMessage.creatorType "not" 2}}
+    	<span data-mid="{{baseMessage.openIdEx.openId}}">{{map ../../listProfile baseMessage.openIdEx.openId 'nick'}}</span>:
+    	{{/is}}
+    	{{#is baseMessage.content.contentType "===" 1}}
+    	{{face baseMessage.content.textContent.text}}
+    	{{/is}}
+    	{{#is baseMessage.content.contentType "===" 2}}
+    	{{map ../../i18n 0}}
+    	{{/is}}
+    	{{#is baseMessage.content.contentType "===" 3}}
+    	{{map ../../i18n 1}}
+    	{{/is}}
+    	{{#is baseMessage.content.contentType "===" 4}}
+    	{{map ../../i18n 2}}
+    	{{/is}}
+    	{{#is baseMessage.content.contentType "===" 102}}
+    	{{map ../../i18n 3}}
+    	{{/is}}
+    </p>
+    <p class="action-time">{{calendar baseMessage.createdAt}}</p>
+    {{/each}}
+  </div>
+</div>
+{{/is}}
+{{#is type "===" "new"}}
+</li>
+{{/is}}

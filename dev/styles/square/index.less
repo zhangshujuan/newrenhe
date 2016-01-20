@@ -1,0 +1,660 @@
+@import "../modules/mixins.less";
+.renhe-square-main {
+	float:left;
+	width:680px;
+}
+.renhe-square-sidebar {
+	float:left;
+	width:290px;
+}
+/*@media (min-width: 992px) {
+	.renhe-square-main {
+		width:680px;
+	}
+	.renhe-square-sidebar {
+		width:290px;
+	}
+}*/
+.renhe-square-sidebar {
+	.renhe-card {
+		.media-left {
+			position: relative;
+			margin-right:14px;
+			.level {
+				position: absolute;
+				left:52px;
+				top:45px;
+			}
+		}
+		.panel-body {
+			padding:20px 15px 0;
+			.media-body {
+				padding-top:6px;
+			}
+			.media-body p {
+				font-size:12px;
+				line-height:20px;
+			}
+		}
+		.media-heading {
+			font-size:14px;
+		}
+		.rmgz {
+			padding:20px 0 15px 0;
+			span {
+				width:49%;
+				display:inline-block;
+			}
+			a {
+				color: #eb5441;
+			}
+		}
+		.btn-signin {
+		background-color: #fff;
+		color: rgba(235,84,65,.7);
+		border-color: rgba(235,84,65,.7);
+		}
+		.btn-frades {
+		}
+		.btn-frades[disabled] {
+			background-color: #eee;
+			color: #999;
+			border-color: #eee;
+		}
+	}
+	.panel-footer,.panel-heading {
+		background-color: #FFF;
+	}
+	.showrmb {
+		a {
+			color: #eb5441;
+			margin-left:5px;
+		}
+	}
+	.tw-getrhb {
+		color: #666;
+		margin-top:8px;
+	}
+	.renhe-guest {
+		.panel-heading {
+			a {
+				color: #999;
+				margin-left:5px;
+				display:inline-block;
+				border-radius: 4px;
+				padding:0 8px;
+				&:link,
+				&:hover,
+				&:active,
+				&:visited {
+					text-decoration: none;
+					outline: 0;
+				}
+				&:hover {
+					color:#da4b31;
+				}
+			}
+		}
+		.carousel-wrapper{
+			.clearfix();
+			height:40px;
+			overflow:hidden;
+		}
+		.item {
+			width:40px;
+			height:40px;
+			margin:0 8px;
+			float:left;
+		}
+	}
+	.search-network {
+		.search-more {
+			> span {
+				color: #d8284b;
+			}
+		}
+		.media-heading {
+			font-size:14px;
+		}
+		.media-body {
+			position: relative;
+		}
+		.scignore {
+			display:none;
+			position: absolute;
+			right:0;
+			top:-2px;
+		}
+		li:hover .scignore {
+			display:inline-block;
+		}
+		.media h4 {
+			> a {
+			}
+		}
+		.media p {
+			font-size:12px;
+		}
+		.refresh {
+			> a {
+				&,
+				&:hover,
+				&:active,
+				&:visited,
+				&:link {
+					text-decoration: none;
+				}
+				> span {
+				}
+			}
+		}
+	}
+}
+.renhe-carousel {
+	overflow:hidden;
+	margin-bottom: 20px;
+	.owl-controls {
+		  position: absolute;
+		  bottom: 4px;
+		  width: 100%;
+	}
+	.item {
+		float:left;
+	}
+}
+.renhe-send-panel {
+	.panel-footer {
+		.clearfix();
+		padding:10px 20px;
+		border-top:0;
+		background-color: #fff;
+	}
+	.panel-body {
+		padding:20px 20px 5px;
+	}
+	.num-s-text {
+		width: 60px;
+		float: left;
+		font-weight: 700;
+		font-size: 22px;
+		font-style: italic;
+		font-family: Constantia, Georgia;
+	}
+}
+.renhe-send-panel ,.media-send-commont{
+	.kind {
+		.clearfix();
+		float: left;
+		margin-top: 4px;
+		> a {
+			position: relative;
+			float: left;
+			color: #000;
+			margin: 0 30px 0 0;
+			&:hover {
+				color:#f65f4c;
+				text-decoration: none;
+			}
+		}
+	}
+	.func {
+		float: right;
+		.checkbox {
+			line-height: 20px;
+		}
+		> button {
+			margin: 4px 0 4px 4px;
+			padding:4px 20px;
+		}
+	}
+}
+.renhe-send-panel .func>button {
+	padding:4px 30px;
+}
+.media-send-commont .kind {
+	margin-top: 5px;
+	> a {
+		margin-left:-12px;
+	}
+}
+.rhlike {
+	& em {
+		color:#999;
+	}
+	&:hover em,&[disabled] em,&.disabled em{
+		color:#eb5441;
+	}
+	&[disabled] em{
+		-webkit-transform-origin: left top;
+		-webkit-animation: like .5s linear;
+		-moz-transform-origin: left top;
+		-moz-animation: like 0.5s linear;
+		-o-transform-origin: left top;
+		-o-animation: like 0.5s linear;
+		-ms-transform-origin: left top;
+		-ms-animation: like 0.5s linear;
+	}
+}
+.icon-face,.icon-img,.icon-topic,.icon-heart-s,.icon-commont-s,.icon-forwarded{
+	position: absolute;
+	left: 0;
+	top: 7px;
+	background-repeat: no-repeat;
+	width: 17px;
+	height: 17px;
+	line-height: 26px;
+	display: inline-block;
+}
+.media-share {
+	display:block;
+	background:#f3f3f3; /* 分享圈子&名片 */
+	padding:15px; /* 分享圈子&名片 */
+	width:70%; /* 分享圈子&名片 */
+	position: relative;
+	.mst {
+		border-bottom:1px solid #ccc;
+	}
+	.mstext {
+		margin-left:70px;
+		min-height:60px;
+		_height:60px;
+		margin-bottom:0;
+	}
+	p {
+		font-size:12px;
+		line-height:20px;
+	}
+	.ms-cons {
+		 position: relative;
+	}
+	img {
+		position: absolute;
+		left:0;
+		top:0;
+		width:60px;
+		height:60px;
+	}
+}
+.min-article {
+	margin-bottom: 17px;
+	background-color: #FFF;
+	.media-line{
+    	margin-left: 90px;
+    	border-bottom: 1px solid #ccc;
+    	height:1px;
+    	&:last-child{
+    		border: none;
+    		}
+    }
+	.media-article {
+		background-color: #FFF;
+		padding: 20px 20px 10px 20px;
+		.media-left {
+			padding-right: 20px;
+			position: relative;
+			.level {
+				position: absolute;
+				left: 30px;
+  				top: 32px;
+			}
+		}
+		.media-body {
+			padding-top:8px;
+		}
+		.media-heading {
+			font-size: 14px;
+			margin-bottom: 12px;
+			> a {
+				color:#000;
+				&:hover {
+					color:#eb5441;
+				}
+			}
+			> span {
+				margin-left:6px;
+				font-size: 12px;
+			}
+		}
+	}
+	.media-content {
+		line-height:22px;
+	}
+	.media-commont-info{
+		border-bottom: 1px solid #eee;
+	}
+	.media-praise-info,.media-commont-info {
+		.clearfix();
+		padding: 12px 20px;
+		background: #FFF;		
+		> div {
+			position: relative;
+			&.cmt-s {
+				margin-left:10px;
+				width:65%;
+				&,a {
+				}
+				a {
+					margin-right:10px;
+					&:hover {
+					}
+				}
+				.text-overflow();
+			}
+			&.cnt-w {
+				padding-left:70px;
+				> em {
+					float:left;
+					color: #999;
+					font-size: 16px;
+					padding-top:2px;
+					display: inline-block;
+					margin-right:10px;
+				}
+				> span {
+					float:left;
+				}
+			}
+			> span {
+				display: inline-block;
+				color: #666;
+			}
+		}
+		.doicon {
+			color: #bbb;
+  			cursor: pointer;
+  			font-size: 18px;
+  			text-decoration: none;
+		}
+	}
+	.doicon:hover,.doicon:active,.doicon:visited,doicon:link {
+		text-decoration: none;
+	}
+	.media-handle {
+		margin-bottom: 0;
+		background-color: #FFF;
+		.sqopts {
+			text-align: center;
+			> a {
+				position: relative;
+				color: #666;
+				font-size: 12px;
+				margin-left: 20px;
+				padding: 4px 0 4px 10px;
+				&.rhlike {
+					width:30px;
+					font-size: 16px;
+				}
+				&.btn-link:hover {
+					color:#f65f4c;
+					text-decoration: none;
+				}
+				&:active,
+				&:visited,
+				&:focus{
+					outline: 0;
+				}
+			}
+		}
+		.dotime {
+			> a {
+				padding-left: 0;
+				font-size: 12px;
+				color: #666;
+			}
+			line-height: 26px;
+			text-align: left;	
+			margin-right:5px;
+		}
+	}
+	.dotime {
+		display:inline-block;
+		float: left;
+		text-align: left;
+		color:#666;
+	}
+	.media-commont {
+		background-color: #fff;
+		padding: 12px 20px 12px 40px;
+		&:last-child {
+			padding-bottom:20px;
+		}
+		a[action-type="CommitDel"] {
+			display:none;
+		}
+		&:hover a[action-type="CommitDel"] {
+			display:inline-block;
+		}
+		&-handle {
+			 margin: 0;
+			.clearfix();
+			> span , > a {
+				font-size:12px;
+			}
+		}
+		.media-left {
+			padding-right:20px;
+			padding-top: 2px;
+		}
+		.commit-text{
+			margin: 0;
+		}
+		.commit-text a {
+			&:hover {
+			}
+		}
+		&-doing .media-body {
+			padding-top: 3px;
+		}
+	}
+	.media-send-commont {
+		/* margin-bottom: 1px; */
+		background-color: #fff;
+		padding: 20px 20px 20px 40px;
+		.media-left {
+			padding-right:20px;
+		}
+		.commops {
+			display:none;
+			padding-top: 6px;
+			.clearfix();
+		}
+	}
+	.media-pic {
+		width:50%;
+		.clearfix();
+		> li {
+			float: left;
+			margin: 0 3px 3px 0;
+			position: relative;
+			> a {
+				/*非IE的主流浏览器识别的垂直居中的方法*/  
+		        display: table-cell;  
+		        vertical-align:middle;  
+		 
+		        /*设置水平居中*/  
+		        text-align:center;  
+		 
+		        /* 针对IE的Hack */  
+		        *display: block;  
+		        *font-size: 70px;/*约为高度的0.873，200*0.873 约为175*/  
+		        *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/  
+		 
+		        width:80px;  
+		        height:80px;
+				cursor:url(http://s1.renhe.cn/images/weibo/big.cur),auto;
+				img {
+		        	vertical-align: middle;
+				}
+			}
+		}
+	}
+	.media-transmit {
+		background-color: #f3f3f3;
+		position: relative;
+		padding: 15px 5px 5px 15px;
+		margin:15px 0;
+		p,a {
+		}
+		.top-arrow {
+			width: 0;
+			height: 0;
+			position: absolute;
+			top: -7px;
+			left: 20px;
+			border: 7px solid transparent;
+			border-top: 0;
+			border-bottom-color: #eee;
+		}
+		.mts-fnc {
+			.clearfix();
+			> span {
+				margin-right: 20px;
+			}
+		}
+	}
+}
+/*.pop-arrow {
+	&,&:after {
+	  position: absolute;
+	  display: block;
+	  width: 0;
+	  height: 0;
+	  border: 9px solid transparent;
+	}
+	div& {
+		top: -40px;
+		left: 24px;
+		border-top-width: 0;
+		border-bottom-color: #050505;
+		border-bottom-color: rgba(05, 05, 05, 0.2);
+	}
+	div&:after {
+		top: 1px;
+		margin-left: -9px;
+		content: " ";
+		border-top-width: 0;
+		border-bottom-color: #eee;
+	}
+}*/
+.upload-img-popover {
+	.file-item {
+		border:1px solid #ccc;
+	}
+	.img-list {
+		width: 270px;
+		margin: 0;
+		padding: 0;
+		.clearfix();
+		> li {
+			float: left;
+			width: 78px;
+			height: 78px;
+			margin: 0 12px 12px 0;
+			overflow: hidden;
+			> div {
+		         /*非IE的主流浏览器识别的垂直居中的方法*/  
+		        display: table-cell;  
+		        vertical-align:middle;  
+		 
+		        /*设置水平居中*/  
+		        text-align:center;  
+		 
+		        /* 针对IE的Hack */  
+		        *display: block;  
+		        *font-size: 69px;/*约为高度的0.873，200*0.873 约为175*/  
+		        *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/
+		 
+		        width:78px;  
+		        height:78px;
+		        .delimg {
+		        	display:none;
+		        }
+		        &:hover {
+		        	 position: relative;
+		        	.delimg {
+		        		display:inline-block;
+		        		position: absolute;
+		        		top:2px;
+		        		right:4px;
+		        		color:red;
+		        	}
+		        }
+			}
+			> a {
+				display: table-cell;
+				width:78px;  
+		        height:78px;
+			}
+			img {
+				vertical-align: middle;
+				width: 78px;
+			}
+		}
+	}
+	.doupload {
+		> a {
+			background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAKAAAABOCAYAAACngR3fAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzRERDI2N0MxRUYwMTFFNTg3MkU5NzdDNDRFNEIwRjIiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzRERDI2N0QxRUYwMTFFNTg3MkU5NzdDNDRFNEIwRjIiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDozNEREMjY3QTFFRjAxMUU1ODcyRTk3N0M0NEU0QjBGMiIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDozNEREMjY3QjFFRjAxMUU1ODcyRTk3N0M0NEU0QjBGMiIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Pt9I7HAAAAN0SURBVHja7J2hktpAGMdD50xdBaIPgGpnOnE1iJsqXM9UnUqGB8CBQCI4xwMwuFOY1qEYBKbuHoAHqKioO0m/bdNObm+XZJfcZEl+v5mdwOaDYf73v/1280G2s1qtfkVR9BD9ZZ6m6SbKIed7clhGz5lK7F6LjeWweIHYvhxmhtiRxD6cETuQw8QQO5TYw4nYOEmSN/nzP798eqJjd73daOetOkrba31Wbc6MtWqT++w+sVYdpR1OxMYdEXYnYl9HUBqlmRjwWjPYTkznrKO8rs1S7l5hJ6gTZcA5MjgzL9kHBTp20MCP4/FYyfu0PAVHpGDAgIABAeoxYHadDxwwaZZd5wM3emoEXKKDM8uSfVCgIykYmAMCBgTAgNBOA1JCcmdq6ENHDx0pxXlCKY4UDBgQAAPCJRsw+2o8OGDSTOZy6OhOrEbABTo4syjZBwU6koKBOSBgQAAMCO004BQZnJmW7IMCHSnFeUIpjhQMGBAAA8IlG5BSnDuU4iqDUpwnlOIq0vEq4BHmPnt6q9/XD8qPMHkdo+f39WMOaGEs7V3WxviouTqGasDXlsfQMB1ZBUPtBqSE5A6luIp0rL0Uly04xlqK+Cjtbfb4h7TvuXOP0u7qXpgEWIrz0rHuhUkIq+D7bJJsQwn4Wev7IO09A8jl68gcEGolhBHw1jN1QAN0VPuE9PWNYQKYF37NpYtv8vluAvt8/SRJ9tpcrt9db511fOGvYz3RUdpNYP80fZWCZwwezsxK9kGBjswBoVZCNeCj5TE0TMerQIW7yy4RRCw4mq1jkAbMLjJzne98gtdRpeARfydnRiX7oEBHfhXnCb+Ka/YiBDAgAAaEphtQlZWQwQ2TZqoUhzLOUIrzhFJcRTqSgoE5IGBAAAwI7TQgJSR3KMVVpCOlOE8oxZGCAQMCYEC4ZANSinNHNBsY5nLo6M6AUpwfE0MfOnroSAoG5oCAAQEwILTTgENkcGZYsg8KdKQU5wmlOFIwYEAADAiXbEBTWQlOYynFoaM7f0pxE3RwZlKyDwp0JAVDrajbs8WSUnbZ83maphst3fTksDS81hSr9qow7Ro51e9D7RirvmliKvaP9P1CKoodSuzBkHb/jXKmrVljScP/deyutxstRVt1lLbR38umjbT9GbFWbaLn+4VUEauujR70tJvX8bcAAwA6myWdo1A+mgAAAABJRU5ErkJggg==);
+			&:hover {
+				background-position: -82px 0;
+			}
+		}
+	}
+}
+.transmit-prover {
+	> p {
+		margin: 0;
+  		overflow: hidden;
+  		word-break: break-all;
+  		> img {
+  			margin-right: 10px;
+  		}
+	}
+	textarea {
+		margin-top: 10px;
+	}
+	.desc {
+		margin: 5px 0;
+	}
+}
+.renhe-square-main .more-article {
+	background-color: #fff;
+	border:none;
+	> a {
+	}
+}
+.renhe-square-main textarea {
+	resize: vertical;
+}
+div.renhe-square-main .well {
+	border-radius: 0;
+	padding:14px 20px;
+}
+div.renhe-square-main,div.renhe-square-sidebar {
+	padding-left: 10px;
+  	padding-right: 10px;
+  	margin-bottom: 25px;
+	.panel {
+	  margin-bottom: 18px;
+	}
+}
+.userfile {
+	.media-heading {
+		font-size:14px;
+	}
+	.uf-title {
+		font-size:12px;
+	}
+	.uf-opts {
+		border-top: 1px solid #f2f4f6;
+		padding-top:5px;
+		font-size:12px;
+	}
+	.media-left {
+		position: relative;
+		.level {
+			position: absolute;
+			left: 32px;
+			top: 34px;
+		}
+	}
+}

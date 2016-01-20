@@ -1,0 +1,15 @@
+<ul class="mfriend">
+{{#each data}}
+	<li action-type="show-chat" data-create="create" data-cid="{{openId}}">
+		<div class="media">
+		  <div class="media-left">
+		      <img class="media-object itu-img" src="{{member.userFaceImageUrl}}" alt="{{member.name}}">
+		  </div>
+		  <div class="media-body">
+		    <h4 class="media-heading">{{member.name}}<span>{{member.curTitle}}</span></h4>
+			<p>{{member.curCompany}}</p>
+		  </div>
+		</div>
+	</li>
+{{/each}}
+</ul>

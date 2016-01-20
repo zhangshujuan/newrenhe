@@ -1,0 +1,37 @@
+<div class="media-heading">
+	<p class="tn"><a href="/contact/showSearch.xhtml?name={{data.member.name}}" data-bind-base="newname">{{data.member.name}}</a></p>
+	<p><a href="/contact/showSearch.xhtml?title={{data.member.curTitle}}" class="tm" >{{data.member.curTitle}}</a> / <a href="/contact/showSearch.xhtml?company={{data.member.curCompany}}" class="tm">{{data.member.curCompany}}</a>/<a href="/contact/showSearch.xhtml?query={{data.member.cityName}}" class="tm">{{data.member.cityName}}</a>/<a href="/contact/showSearch.xhtml?query={{data.member.industryName}}" class="tm">{{data.member.industryName}}</a></p>	
+</div>
+<div class="media-content">
+	{{#is data.member.specialties 'len>' 0}}
+	<div class="rmintro clearfix">
+		<div class="rmtt pull-left">{{map i18n.text 11}}</div>
+		<p class="pull-left">
+		{{#each data.member.specialties}}
+		{{this}}
+		{{/each}}
+		</p>
+	</div>
+	{{/is}}
+	{{#is data.member.preferred 'len>' 0}}
+	<div class="rmintro clearfix">
+		<div class="rmtt pull-left">{{map i18n.text 12}}</div>
+		<p class="pull-left">
+		{{#each data.member.preferred}}
+		{{this}}
+		{{/each}}
+		</p>
+	</div>
+	{{/is}}
+	{{#is data.member.aim 'len>' 0}}
+	<div class="rmintro clearfix">
+		<div class="rmtt pull-left">{{map i18n.text 13}}</div>
+		<p class="pull-left">
+		{{#each data.member.aim}}
+		{{this}}
+		{{/each}}
+		</p>
+	</div>
+	{{/is}}
+	
+</div>

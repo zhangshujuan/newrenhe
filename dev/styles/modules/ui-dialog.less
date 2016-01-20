@@ -1,0 +1,205 @@
+@import "./mixins.less";
+.ui-dialog { 
+  position: absolute; 
+  top: 0; 
+  left: 0;
+  width: 300px; 
+  overflow: visible; 
+  outline: 0; 
+  background-clip: padding-box;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(05, 05, 05, 0.2);
+  
+  outline: medium none;
+  position: fixed;
+  z-index: 1050;
+  .ui-dialog-titlebar {
+    position: relative;
+    padding:5px 15px;
+    border:0px 0px 0px 1px solid;
+    border-color: white;
+    padding: 5px 15px;
+    font-size: 18px;
+    text-decoration:none;
+    background:#f2f2f2;
+    cursor: move;
+  }
+  .ui-dialog-title {
+    float: left;
+    color:#333;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    font-size: 14px;
+  }
+  .ui-dialog-titlebar-close {
+    position: absolute;
+    right: .3em;
+    top: 50%;
+    width: 19px;
+    margin: -10px 0 0 0;
+    padding: 1px;
+    height: 18px;
+    font-size: 20px;
+    font-weight: bold;
+    line-height: 10px;
+    background:none;
+    border-width: 0;
+    border:none;
+    box-shadow: none;
+    overflow: hidden;
+    &:active,&:focus {
+      outline: 0;
+    }
+  }
+  .ui-dialog-titlebar-close span { 
+    display: block; 
+    margin: 1px;
+    text-indent: 9999px;
+    background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAKCAYAAABi8KSDAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyJpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoV2luZG93cykiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6NTczODU1M0UwMDVDMTFFNUJBN0FDNTc1NTY3RTRGQkMiIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6NTczODU1M0YwMDVDMTFFNUJBN0FDNTc1NTY3RTRGQkMiPiA8eG1wTU06RGVyaXZlZEZyb20gc3RSZWY6aW5zdGFuY2VJRD0ieG1wLmlpZDo1NzM4NTUzQzAwNUMxMUU1QkE3QUM1NzU1NjdFNEZCQyIgc3RSZWY6ZG9jdW1lbnRJRD0ieG1wLmRpZDo1NzM4NTUzRDAwNUMxMUU1QkE3QUM1NzU1NjdFNEZCQyIvPiA8L3JkZjpEZXNjcmlwdGlvbj4gPC9yZGY6UkRGPiA8L3g6eG1wbWV0YT4gPD94cGFja2V0IGVuZD0iciI/Ppe3ifcAAADVSURBVHjalI6hCsJQFIbvrljMvoPJNDCtLFlm9AEMmgSrCEsDsRosyvABDAuumFaWZEsm38FsEZnfGSeMNS98+3fu/3Pu7xRF4Rtj9jB1XfdpWqcsywFygZXlE8IQcoxRKyhzrn4o4QCu0IeMwFiDopneix84VVWJ0WE4wQw+cIQFdOEMcyp+67BucpAtrBtNdrAhWIes+eNY3So1Yt0qNQ6qMsfqG8tPD0207xsmPLsU1VnuE8nJ5lSNF/gEb7JF1dd78VMJR/AAj8C92VFnT/3oJ8AABWhOx3ZpdHcAAAAASUVORK5CYII=);
+    background-repeat: no-repeat;
+  }
+  .ui-dialog-titlebar-close:hover,
+  .ui-dialog-titlebar-close:focus {
+    padding: 1px;
+    filter: alpha(opacity=90);
+    -khtml-opacity: 0.90;
+    -moz-opacity: 0.90;
+    opacity: 0.90;
+  }
+  .ui-dialog-content { 
+    position: relative; 
+    border: 0; 
+    padding: .5em 1em; 
+    background: none; 
+    overflow: visible; 
+    zoom: 1; 
+  }
+  .ui-dialog-buttonpane {
+    .clearfix();
+    text-align: left;
+    border-width: 1px 0 0 0;
+    background-image: none;
+    zoom: 1;
+
+  }
+  .ui-resizable-se { 
+    width: 14px; 
+    height: 14px; 
+    right: 3px; 
+    bottom: 3px; 
+  }
+  .ui-dialog-buttonpane {
+    text-align: center;
+    .ui-dialog-buttonset { 
+      display: inline-block;
+    }
+    button { 
+      margin: .5em 1.2em .5em 0;
+      cursor: pointer;
+      &:last-child{
+        margin-right: 0;
+      }
+    }
+  }
+  &.renhe-dialog-alert,&.renhe-dialog {
+    .ui-dialog-title {
+      color: #dc442e;
+    }
+  }
+}
+.ui-dialog-buttonset .ui-button{
+  display: inline-block;
+  margin-bottom: 0; // For input.btn
+  font-weight: normal;
+  text-align: center;
+  vertical-align: middle;
+  touch-action: manipulation;
+  cursor: pointer;
+  background-image: none; // Reset unusual Firefox-on-Android default style; see https://github.com/necolas/normalize.css/issues/214
+  border: 1px solid transparent;
+  white-space: nowrap;
+  line-height: 1.42857143;
+  border-radius: 4px;
+  padding: 6px 21px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  &,
+  &:active,
+  &.active {
+    &:focus,
+    &.focus {
+      outline: thin dotted;
+      outline: 5px auto -webkit-focus-ring-color;
+      outline-offset: -2px;
+    }
+  }
+
+  &:hover,
+  &:focus,
+  &.focus {
+    background-color: #f15a47;
+    text-decoration: none;
+    outline: 0;
+  }
+
+  &:active,
+  &.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+  }
+
+  &.disabled,
+  &[disabled],
+  fieldset[disabled] & {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+  }
+  color: #fff;
+  background-color: #d8503f;
+
+}
+
+/***Dialog fixes**/
+
+.ui-dialog-buttonset .ui-button:nth-child(2){
+  color: #333;
+  background-color: #f3f3f3;
+  border-radius: 5px;
+  border-color: #bdbdbd;
+  &.focus {
+    background-color: #f3f3f3;
+  }
+}
+
+.ui-helper-clearfix {
+  .clearfix();
+}
+/* Overlays */
+.ui-widget-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: #000;
+	opacity: .3;
+	filter: Alpha(Opacity=30);
+}
+
+.ui-dialog.renhe-dialog-popover {
+	&.chatface {
+		position: fixed;
+	}
+	position: absolute;
+}
+.ui-dialog.renhe-dialog-popover .ui-dialog-titlebar {
+	cursor: default;
+}

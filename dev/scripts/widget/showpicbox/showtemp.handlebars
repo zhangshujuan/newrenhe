@@ -1,0 +1,63 @@
+<div class="renhe-expand-media-box">           
+  <div class="renhe-expand-media">
+    <div class="tab-feed-a">
+      <ul class="list-unstyled">
+        <li>
+          <span>
+            <a href="javascript:void(0);" action-type="tosmall">
+              <i class="W_ficon">k</i>&nbsp;{{optxt.s}}
+            </a>
+          </span>
+        </li>
+        <li>
+          <span>
+            <a href="javascript:void(0);" action-type="seeBigPic" target="_blank">
+              <i class="W_ficon">f</i>&nbsp;{{optxt.c}}
+            </a>
+          </span>
+        </li>
+        <li>
+          <span>
+            <a href="javascript:void(0);" action-type="trunLeft">
+              <i class="W_ficon">m</i>&nbsp;{{optxt.xl}}
+            </a>
+          </span>
+        </li>
+        <li>
+          <span>
+            <a href="javascript:void(0);" action-type="trunRight">
+              <i class="W_ficon">n</i>&nbsp;{{optxt.xr}}
+            </a>
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <!-- .renhe-expand-media -->
+  <div class="renhe-media-view">
+    <div class="media-show-box">
+      <ul class="list-unstyled smallcursor" node-type="picShow">
+        <li class="active"></li>
+      </ul>
+    </div>
+    {{#is data 'len>' 1}}
+    <div class="pic-choose-box">
+		<div node-type="mediaShowImg">
+			{{#each data}}
+            <a href="javascript:void(0);" data-action-src="{{big}}" data-index="{{@index}}"><img src="{{tiny}}"></a>
+            {{/each}}
+        </div>
+    	<a class="arrow-small arrow-left-small" href="javascript:void(0);" action-type="picshowPrev">
+            <i class="W_ficon">b</i>
+            <span class="sr-only">Previous</span>
+        </a>
+        <a class="arrow-small arrow-right-small" href="javascript:void(0);" action-type="picshowNext">
+            <i class="W_ficon">a</i>
+            <span class="sr-only">Next</span>
+        </a>
+	</div>
+	{{/is}}
+  </div>
+  <!-- .renhe-media-view -->
+</div>
+<!-- .renhe-expand-media-box -->

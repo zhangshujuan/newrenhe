@@ -1,0 +1,285 @@
+@import "renmai-nav";
+@import "renmai-bars";
+@import "popop";
+.overflow-scrollbar{
+	-ms-overflow-x: hidden;
+	overflow-x: hidden;
+	-ms-overflow-y: auto;
+	overflow-y: auto;
+	&::-webkit-scrollbar-track-piece{background-color:transparent}
+	&::-webkit-scrollbar{width:6px;height:8px}
+	&::-webkit-scrollbar:hover{background-color:#ececec}
+	&::-webkit-scrollbar-thumb{background-color:rgba(202,206,214,.8);-webkit-border-radius:4px;outline-offset:-3px}
+	&::-webkit-scrollbar-thumb:hover{background-color:rgba(204,204,204,.8)}
+	&::-webkit-scrollbar-button{height:0;width:0}
+}
+
+.renhe-panel {
+	border-radius: 0;
+	border:none;
+	background-color: transparent;
+	.panel-heading {
+		background-color: #fff;
+		margin-bottom:1px;
+		a {
+			margin-left:10px;
+		}
+		.search-tab { 
+			li {
+			padding:0 20px;
+			}
+		}
+	}
+	.panel-body {
+		background-color: #fff; /* 会影响到活动、档案的样式 */
+	}
+	.btn-danger {
+		width:12em; /* 会影响到导入邮箱按钮 */
+	}
+	.media,.media-body {
+		overflow: visible;
+	}
+}
+.manageopt {
+	padding: 0 5px 5px;
+}
+
+.def-card {
+	display: block;
+	float: left;
+	width: 50%;
+	height:108px;
+	&.share {
+		width:100%;
+	}
+	.media {
+		margin: 0;
+		padding: 20px;
+		margin: 5px;
+		min-height: 98px;
+		background-color: #f3f4f5;
+	}
+	.media-heading {
+		font-size: 14px;
+	}
+	.media-body {
+		position: relative;
+		.icon-bar {
+			display: block;
+			width: 22px;
+			height: 2px;
+			border-radius: 1px;
+		}
+		.cd-opt {
+			position: absolute;
+			right: -15px;
+    			top: -13px;
+		}
+		> p {
+			width:226px;
+			font-size: 12px;
+			margin:0;
+		}
+	}
+	.dropdown-menu {
+		min-width:105px;
+	}
+}
+
+.inv-card {
+	padding: 10px 0;
+	border-bottom:1px solid #eee;
+	&.last {
+	border-bottom:none;
+	}
+	&.unread {
+	background:#f8faff;
+	}
+	.media {
+		padding: 10px 0 10px 10px;
+	}
+	.media-heading {
+		font-size: 14px;
+	}
+	.media-body {
+		position: relative;
+		font-size: 12px;
+		.cd-opt {
+			position: absolute;
+			right: 15px;
+    			top: 12px;
+    			.btn-default {
+			 color: #337ab7;
+			 background-color: #fff;
+			 border-color: #337ab7;
+			}
+			 .btn-default:hover {
+			 color: #23527c;
+			 border-color: #23527c;
+			}
+		}
+		 p {
+			margin:0;
+			}
+	}
+}
+
+.email-panel {
+	padding-bottom:30px;
+	> h4 {
+		font-size: 18px;
+	}
+	.history-list {
+		font-size: 12px;
+	    	color: #888;
+	    	margin-left: 10px;
+	}
+}
+.support-mail {
+	li {
+		&.checkbox { margin:0 0 20px 0;}
+	}
+	label {
+		padding-left: 0;
+	}
+	input[type="radio"] {
+		vertical-align: middle;
+		margin: 0;
+	}
+	b {
+		background: url("http://s1.renhe.cn/images/ico_mailinduct.png") no-repeat;
+		display: inline-block;
+		height: 20px;
+		width: 90px;
+		vertical-align: middle;
+		cursor: pointer;
+		&.email-126 {
+			background-position: 0 -60px;
+		}
+		&.email-163 {
+		    background-position: -90px -20px
+		}
+		&.email-qq {
+		    background-position: -90px -80px
+		}
+		&.email-gmail {
+		    background-position: -90px 0
+		}
+	}
+}
+.markup_choose {
+	background-image: url("/images/square_icon.png");
+	background-repeat: no-repeat;
+	width: 34px;
+	height: 34px;
+}
+.renmai-manage-con {
+	li {
+		position: relative;
+	}
+	.media {
+		border: 2px solid transparent;
+	}
+	.markup_choose {
+		display: none;
+	}
+	&.manage {
+		.media {
+			border: 2px solid #d8d8d8;
+			cursor: pointer;
+		}
+		.choosed {
+			.media {
+				border: 2px solid #f65f4c;
+			}
+			.markup_choose {
+				background-position: -86px -60px;
+			}
+		}
+		.markup_choose {
+			background-position: -86px -100px;
+			position: absolute;
+			right: 7px;
+			bottom: 7px;
+			display: block;
+		}
+
+	}
+}
+.renmai-email-logo {
+	margin:30px 0 50px 0;
+}
+.rm-select-widget {
+	background-color:#fff;
+	border:1px solid #ddd;
+	border-top:0;
+	.ckhead {
+		border-top:1px solid #ddd;
+		background-color:#f6f6f6;
+	}
+	.checkbox {
+		margin:0;
+		padding:10px;
+	}
+	.scoll-box {
+		height:410px;
+	}
+	.scoll-box .checkbox {
+		border-top:1px dotted #ddd;
+		&:hover {
+			background-color:#f6f6f6;
+		}
+	}
+	label {
+		width:100%;
+	}
+}
+.hint-tips {
+	box-shadow:0;
+	background-color: #f2fae7;
+	.icon-ok-sign {
+		color: #82d211;
+		font-size: 25px;
+		margin-right: 10px;
+		position: absolute;
+		left: 0;
+		top: 8px;
+	}
+	p {
+		position: relative;
+		padding-left: 28px;
+		margin-bottom: 0;
+		strong {
+			color: #f65f4c;
+			font-weight: normal;
+		}
+	}
+}
+.sendsms-popop {
+	h4,h3 {
+		font-size:14px;
+		> span {
+			font-size:14px;
+		}
+	}
+	p {
+		em {
+			color: #f60;
+			font-style: normal;
+		}
+	}
+	.media {
+		background-color: #fbfbfb;
+		padding:20px;
+	}
+	.smt {
+		color: grey;
+		margin-top: 5px;
+	}
+	.time {
+		color:#888;
+	}
+}
+.error-msg {
+	color:#eb5441;
+}

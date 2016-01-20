@@ -1,0 +1,9 @@
+<div node-type="showAddFacePic" class="addons layer-emotions">
+  <div class="layer-content">
+      <ul class="emotionslist clearfix">
+      {{#each data}}
+        <li><img width="22" hight="22" src="{{../domain}}{{this}}" addFacesPic="{{@key}}"  alt="{{@key}}" title="{{@key}}" /></li>
+      {{/each}}
+      </ul>     
+  </div>
+</div>

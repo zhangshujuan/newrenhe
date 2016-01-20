@@ -1,0 +1,47 @@
+<div class="text-right js-add-opts">
+	<p><a href="javascript:void(0);" class="js-add-panel" data-template="#ProjectExperienceTemplate">{{map i18n.text 8}}{{map i18n.text 17}}</a></p>
+</div>
+{{#each data.projects}}
+<form class="form-horizontal js-validate">
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 1}}</label>
+	    <div class="col-sm-4">
+			<input type="hidden" name="id" value="{{profileProjectIntroduction.id}}">
+	      <input type="text" class="form-control" name="name" value="{{profileProjectIntroduction.name}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 20}}'}}">
+	    </div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 2}}</label>
+	    <div class="col-sm-8 sxtime">
+	    	<input type="text" class="form-control" name="startYear" value="{{startYear}}" validate="{validate:{required:true,digits:true,cnowYear:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 4}}',digits:'{{map ../i18n/massages 0}}{{map ../i18n/massages 5}}',cnowYear:'{{map ../massages 6}}'}}">
+	      	<select name="startMonth" class="form-control" value="{{startDate}}" validate="{validate:{required:true,cnowMonth:'[name=startYear]'},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 7}}',cnowMonth:'{{map ../i18n/massages 8}}'}}">
+				<option value="">{{map ../i18n/text 1}}</option>
+				{{#each ../i18n/monthList}}
+				<option value="{{this}}" {{#is ../startMonth "===" this}}selected{{/is}}>{{this}}</option>
+				{{/each}}
+			</select>
+			<span class="form-control-static">{{map ../i18n/text 2}}</span>
+			<input type="text" class="form-control" name="endYear" value="{{endYear}}" validate="{validate:{required:true,digits:true,cnowYear:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 9}}',digits:'{{map ../i18n/massages 0}}{{map ../i18n/massages 10}}',cnowYear:'{{map ../i18n/massages 11}}'}}">
+	      	<select name="endMonth"  class="form-control" value="endMonth" validate="{validate:{required:true,cnowMonth:'[name=endYear]',compareDate:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 12}}',cnowMonth:'{{map ../i18n/massages 13}}',compareDate:'{{map ../i18n/massages 14}}'}}">
+				<option value="">{{map ../i18n/text 1}}</option>
+				{{#each ../i18n/monthList}}
+				<option value="{{this}}" {{#is ../endMonth "===" this}}selected{{/is}}>{{this}}</option>
+				{{/each}}
+			</select>
+
+	    </div>
+	</div>
+	
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 7}}</label>
+	    <div class="col-sm-11">
+	      	<textarea class="form-control js-textlimit" data-limit="600" rows="3" name="introduction" validate="{validate:{required:true,maxlength:600},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 21}}',maxlength:'{{map ../i18n/massages 21}}{{map ../i18n/massages 19}}'}}">{{profileProjectIntroduction.introduction}}</textarea>
+	      	<p class="form-control-static">{{map ../i18n/text 5}} <span class="red js-num">600</span> {{map ../i18n/text 6}}</p>
+	    </div>
+	</div>
+	<div class="text-right">
+		<p><a href="javascript:void(0);" class="js-remove-panel">{{map ../i18n/text 7}}{{map ../i18n/text 17}}</a></p>
+	</div>
+</form>
+{{/each}}

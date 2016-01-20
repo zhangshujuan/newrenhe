@@ -1,0 +1,214 @@
+.renhe-nav {
+	/*background-color: #323a45;*/
+	height:92px;
+
+	.container {
+		padding-left: 9px;
+  		padding-right: 9px;
+	}
+	.renhe-logo {
+		padding: 10px 0;
+	}
+	.renhe-logo-text {
+		padding: 25px 0;
+		margin-left:0;
+	}
+	.navbar{
+		border: none;
+	}
+
+	.navbar-inverse {
+		min-height: 70px;
+		border-radius: 0;
+		position: fixed;
+  		width: 100%;
+  		z-index:1051;
+		.navbar-nav {
+			margin-left:6%;
+			position: relative;
+			.badge {
+				    position: absolute;
+				    left: 38px;
+				    top: 13px;
+				    padding: 3px 5px;
+			}
+		}
+		.navbar-nav > li > a {
+			font-size: 14px;
+			line-height: 70px;
+			padding-top: 0;
+			padding-bottom: 0;
+			&:hover, &:focus{			
+				background-color:rgba(0,0,0,0.5); 
+				color: #fff;	
+			}
+		}
+		.open > a{
+			background-color:rgba(0,0,0,0.5); 
+			color: #fff;
+		}
+		.navbar-nav > .active > a {
+			background-color: #1e1e27;
+			color: #fff;
+		}
+		.navbar-toggle {
+			margin-top: 20px;
+		}
+		.navbar-collapse {
+			/* padding-top: 10px; */
+			max-width: 980px;
+		}
+		.navbar-brand {
+			height: auto;
+		}
+		.navbar-setting.dropdown.open{			
+			background-color:rgba(0,0,0,0.5); 
+			color: #fff;	
+		}
+		.navbar-setting {
+			position: relative;
+			margin-right:-20px;
+			height: 70px;
+    		line-height: 70px;
+			/* padding: 13px 0 10px 15px; */
+			> .seticon {
+				font-size: 20px;
+				text-decoration: none;
+				color:#fff;
+			}
+			.dropdown-menu {
+				min-width:105px;
+				top:68px;
+			}
+			.sarow {
+				width:0;
+				height:0;
+				line-height:0;
+				position: absolute;
+				border: 15px solid transparent;
+				border-left: 15px solid #313131;
+				border-bottom: 10px solid #fff;
+				z-index: 10000;
+				top: -10px;
+  				right: 3px;
+			}
+
+			.nav-img{
+				width:36px;
+				height:36px;
+				margin-top: 18px;
+				margin-bottom: 18px;
+				float: right;
+			}
+			.nav-dropdown{
+				/* margin-top:18px;*/
+				float: right;
+				vertical-align: middle;
+			}
+		}
+		.nav-form{
+			padding: 10px 20px 10px 20px;
+			width:236px;
+		}
+		ul.navbar-right .dropdown-menu{
+			left:0;
+		}
+		.navbar-form {
+			padding: 0px 10px 0px 10px;
+			input.form-control {
+				width: 178px;
+				padding-left:38px;
+				border-radius: 2px;
+				background-color: #eee;
+				border: 0;
+				/*color: #a0a0a0;*/
+				box-shadow: inherit;
+				height: 36px;
+				line-height: 36px;
+				border-radius: 18px;
+				margin-top: 7px;
+				-webkit-transition:width 0.5s;
+				transition:width 0.5s;
+				&:focus {
+					border: 0;
+					outline: 0;
+					box-shadow: inherit;
+					width: 238px;
+				}
+				
+			}
+			.btn-link {
+				position: absolute;
+				left: 0;
+				z-index: 10;
+				top: 13px;
+				color: #a9a8a8;
+				&:hover,&:active,&:visited,&:focus {
+					text-decoration: none;
+					outline: 0;
+				}
+			}
+		}
+		.rh-arrow {
+			display: none;
+			position: absolute;
+			border:8px solid transparent;
+			border-bottom-color: #eeeeee;
+			top: 45px;
+			left: 50%;
+			margin-left: -8px;
+		}
+	}
+	.caret {
+	  margin-left:4px;
+	  background-image: url("@{version}/images/select.png");
+	  width:11px;
+	  height:7px;
+	  border: none;
+	  margin-left: 10px;
+	  margin-right:10px;
+	}
+	.navbar-nav>li>.dropdown-menu {
+	  margin-top: 0;
+	  border-top-right-radius: 4px;
+	  border-top-left-radius: 4px;
+	}
+	.znx-link {
+		position: relative;
+		margin-top: 10px;
+  		a {
+  			position: absolute;
+		  	display: inline-block;
+		  	width: 96px;
+		  	color: #fff;
+		  	top:14px;
+		  	right:-110px;
+		  	&:hover {
+		  		color:#888;
+		  	}
+  		}
+  		a:hover span{
+  			color:#fff;
+  		}
+  		em {
+  			font-style: normal;
+  			font-weight:700;
+  		}
+  		.znx-num {
+  			display: inline-block;
+  			border-radius:2px;
+  			background:#eb5441;
+  			padding: 1px 5px;
+  			font-size: 10px;
+  			margin-left: 4px;
+  			line-height: 15px;
+			-webkit-animation: like .5s linear;
+			-moz-animation: like 0.5s linear;
+			-o-animation: like 0.5s linear;
+			-ms-animation: like 0.5s linear;
+  		}
+	}
+}
+label{
+	/*font-weight: lighter;*/
+}

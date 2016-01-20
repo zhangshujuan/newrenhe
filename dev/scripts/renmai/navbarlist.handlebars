@@ -1,0 +1,23 @@
+<div class="subbar-head"><a href="javascript:void(0);" data-name="{{map i18n 4}}" data-num="{{totalNum}}" data-gid="all">{{map i18n 4}} ({{totalNum}})</a></div>
+<div class="subbar-panel">
+	<div class="group-title clearfix"><a data-toggle="collapse" href="#navFriendGrouplist" aria-expanded="false"><span class="icon-caret-right"></span> {{map i18n 5}}</a><a class="pull-right" href="javascript:void(0);" node-type="addgroup" data-target="rmfriends-list">{{map i18n 11}}</a></div>
+	<ul class="group-body panel-collapse collapse in" node-type="rmfriends-list" id="navFriendGrouplist" aria-expanded="false">
+		{{#each friendGroupListVo.friendGroupList}}
+		<li><a href="javascript:void(0);" data-name="{{groupname}}" data-num="{{memberCount}}" data-gid="0:{{id}}" data-bind-renmai="group-{{id}}"><span data-bind-renmai="group-{{id}}-name">{{groupname}}</span>  <span data-bind-renmai="num:0:{{id}}">{{memberCount}}</span></a></li>
+		{{/each}}
+		<li class="nogroup"><a href="javascript:void(0);" data-name="{{map i18n 9}}" data-num="{{friendGroupListVo.notInGroupCount}}" data-gid="0:0">{{map i18n 9}}  <span data-bind-renmai="num:0:0">{{friendGroupListVo.notInGroupCount}}</span></a></li>
+		<li><a href="javascript:void(0);" data-name="{{map i18n 10}}" data-num="{{friendGroupListVo.vipGroupCount}}" data-gid="0:-2">{{map i18n 10}}  <span data-bind-renmai="num:0:-2">{{friendGroupListVo.vipGroupCount}}</span></a></li>
+	</ul>
+	<div class="group-title clearfix"><a data-toggle="collapse" href="#navIndustryVoList" aria-expanded="false"><span class="icon-caret-right"></span> {{map i18n 7}} </a></div>
+	<ul class="group-body panel-collapse collapse" id="navIndustryVoList">
+		{{#each spell.contactLeftMenuVo.industryVoList}}
+		<li><a href="javascript:void(0);" data-name="{{name}}" data-num="{{totalNumber}}" data-gid="2:{{id}}">{{name}} {{totalNumber}}</a></li>
+		{{/each}}
+	</ul>
+	<div class="group-title clearfix"><a data-toggle="collapse" href="#navAddressVoList" aria-expanded="false"><span class="icon-caret-right"></span> {{map i18n 6}} </a></div>
+	<ul class="group-body panel-collapse collapse" id="navAddressVoList">
+		{{#each spell.contactLeftMenuVo.addressVoList}}
+		<li><a href="javascript:void(0);" data-name="{{name}}" data-gid="1:{{id}}" data-num="{{totalNumber}}">{{name}} {{totalNumber}}</a></li>
+		{{/each}}
+	</ul>
+</div>

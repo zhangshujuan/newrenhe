@@ -1,0 +1,16 @@
+{{#each data.projects}}
+{{#is @index "not" 0}}<hr class="row"/>{{/is}}
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 12}}</dt>
+	<dd>{{profileProjectIntroduction.name}}</dd>
+</dl>
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 2}}</dt>
+	<dd>{{startYear}}{{map ../i18n/text 0}}{{startMonth}}{{map ../i18n/text 1}}--{{endYear}}{{map ../i18n/text 0}}{{endMonth}}{{map ../i18n/text 1}}</dd>
+</dl>
+
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 7}}</dt>
+	<dd>{{profileProjectIntroduction.introduction}}</dd>
+</dl>
+{{/each}}

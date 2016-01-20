@@ -1,0 +1,117 @@
+	<div class="panel-body detail-panel">
+	{{#each experienceVoList}}
+		{{#is @index "not" 1}}
+		<hr class="row"/>
+		{{/is}}
+    	<dl class="renhe-dl">
+    		<dt>{{map ../i18n/label 1}}</dt>
+    		<dd><a href="#" class="mr30">{{experience.company}}</a><span  class="mr30">{{orgTypeName}}£∫{{orgSizeName}}»À</span><a href="#">{{industryName}}</a></dd>
+    	</dl>
+    	<dl class="renhe-dl">
+    		<dt>{{map ../i18n/label 0}}</dt>
+    		<dd>{{experience.title}}</dd>
+    	</dl>
+    	<dl class="renhe-dl">
+    		<dt>{{map ../i18n/label 2}}</dt>
+    		<dd>{{startDate}}--{{experienceVo.endDate}}</dd>
+    	</dl>
+    	<dl class="renhe-dl">
+    		<dt>{{map ../i18n/label 7}}</dt>
+    		<dd>{{experience.positionDesc}}</dd>
+    	</dl>
+    {{/each}}
+    </div>
+    <div class="panel-body edit-panel" style="display:none;" data-gettype="getformHorizontal" data-url="/member/editPositions.xhtml">
+    	{{#each experienceVoList}}
+    	<div class="form-horizontal">
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 0}}</label>
+    		    <div class="col-sm-4">
+    		      <input type="text" class="form-control" name="title" value="{{experience.title}}">
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 1}}</label>
+    		    <div class="col-sm-4">
+    		      <input type="text" class="form-control" name="company" value="{{experience.company}}">
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 2}}</label>
+    		    <div class="col-sm-11 sxtime">
+    		    	<input type="text" class="form-control" name="startYear" value="{{startDate}}">
+    		      	<select name="startMonth" name="startMonth"  class="form-control" value="{{startDate}}">
+    					<option value="">{{map ../i18n/text 1}}</option>
+    					{{#each ../i18n/monthList}}
+        				<option value="{{this}}">{{this}}</option>
+    					{{/each}}
+    				</select>
+    				<span class="form-control-static">{{map ../i18n/text 2}}</span>
+    				<input type="text" class="form-control" name="endYear" value="{{endDate}}">
+    		      	<select name="endMonth" name="endMonth"  class="form-control">
+    					<option value="">{{map ../i18n/text 1}}</option>
+    					{{#each ../i18n/monthList}}
+        				<option value="{{this}}">{{this}}</option>
+    					{{/each}}
+    				</select>
+    				<div class="checkbox inline-block">
+    				  <label>
+    				    <input type="checkbox" value="1" name="now">{{map ../i18n/text 3}}
+    				  </label>
+    				</div>
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 3}}</label>
+    		    <div class="col-sm-11 industry-select js-area-industry">
+    		      	<select class="form-control primary" name="industry_Parents" value="$!{experienceVo.industryName}"><option value="">«Î—°‘Ò</option></select> 
+    				<select class="form-control secondary" name="industry"></select> 
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 4}}</label>
+    		    <div class="col-sm-11 industry-select">
+    
+    		      	<select class="form-control primary" name="orgtype" value="$!{experienceVo.orgTypeName}">
+    					<option value="">{{map ../i18n/text 4}}</option>
+    					{{#each ../i18n/typeList}}
+        				<option value="{{this}}">{{this}}</option>
+    					{{/each}}
+    				</select> 
+    		    </div>
+    		</div>
+    		
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 5}}</label>
+    		    <div class="col-sm-11 industry-select">
+    				
+    		      	<select class="form-control primary" name="orgsize" value="$!{experienceVo.orgSizeName}">
+    					<option value="">{{map ../i18n/text 4}}</option>
+    					{{#each ../i18n/sizeList}}
+        				<option value="{{this}}">{{this}}</option>
+    					{{/each}}
+    				</select> 
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 6}}</label>
+    		    <div class="col-sm-11 industry-select">
+    		      	<input type="text" class="form-control" name="website">
+    		    </div>
+    		</div>
+    		<div class="form-group">
+    			<label class="col-sm-1 control-label">{{map ../i18n/label 7}}</label>
+    		    <div class="col-sm-11">
+    		      	<textarea class="form-control" name="positionDesc" rows="3" value="$!{experienceVo.experience.positionDesc}"></textarea>
+    		      	<p class="form-control-static">{{map ../i18n/text 5}} <span class="red">600</span> {{map ../i18n/text 6}}</p>
+    		    </div>
+    		</div>
+    		<div class="text-right">
+    			<p><a href="javascript:void(0);" class="js-remove-panel">{{map ../i18n/text 7}}{{map ../i18n/text 9}}</a></p>
+    		</div>
+    	</div>
+    	{{/each}}
+    	<div class="text-right js-add-opts">
+    		<p><a href="javascript:void(0);" class="js-add-panel" data-template="#WorkExperienceTemplate">{{map ../i18n/text 8}}{{map ../i18n/text 9}}</a></p>
+    	</div>
+    </div>

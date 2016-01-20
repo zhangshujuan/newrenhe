@@ -1,0 +1,146 @@
+//图片查看器
+@import "./mixins.less";
+
+.renhe-media-wrap {
+	ul {
+		.clearfix();
+	}
+	li {
+		float: left;
+		margin: 0 6px 6px 0;
+		> a {
+
+		}
+		img {
+			cursor: url(http://s1.renhe.cn/images/weibo/big.cur), auto;
+		}
+	}
+}
+.renhe-expand-media-box {
+	background-color: #f3f3f3;
+	padding: 12px 15px 15px;
+	width: 100%;
+	ul {
+		.clearfix();
+		li {
+			float: left;
+		}
+	}
+	.renhe-expand-media {
+		overflow: hidden;
+		margin-bottom:8px;
+	}
+	.tab-feed-a {
+		ul {
+			> li {
+				margin: 0 0 0 -1px;
+				&:first-child span {
+					padding-left:0;
+				}
+				> span {
+					display: block;
+					margin: 5px 0;
+					padding: 0 10px;
+					border-left-width: 1px;
+					border-left-style: solid;
+					line-height: 10px;
+					> a {
+						text-decoration: none;
+						color: #333;
+						&:hover {
+							color:#eb5441;
+						}
+					}
+				}
+			}
+		}
+	}
+	.media-show-box {
+		overflow: hidden;
+		margin-bottom:10px;
+		li {
+			width: 100%;
+			display: none;
+			position: relative;
+			&.active {
+				display: inline-block;
+				img,canvas {
+					max-width: 100% !important;
+				}
+				text-align: center;
+			}
+		}
+	}
+	.pic-choose-box {
+		position: relative;
+		padding: 0 14px 0 15px;
+		.arrow-small {
+			position: absolute;
+			width: 12px;
+			height: 50px;
+			top: 1px;
+			background-color: #fff;
+			display: inline-block;			
+			text-decoration: none;
+			line-height: 50px;
+			text-align: center;
+			font-weight: 600;
+			border-bottom-left-radius: 4px;
+			border-top-left-radius: 4px;
+		}
+		.arrow-left-small {
+			left: 0;			
+		}
+		.arrow-right-small {
+			right: 0;	
+		}
+		.owl-item {
+			text-align:center;
+			> a {
+				/*非IE的主流浏览器识别的垂直居中的方法*/  
+		        display: table-cell;  
+		        vertical-align:middle;  
+		 
+		        /*设置水平居中*/  
+		        text-align:center;  
+		 
+		        /* 针对IE的Hack */  
+		        *display: block;  
+		        *font-size: 44px;/*约为高度的0.873，200*0.873 约为175*/  
+		        *font-family:Arial;/*防止非utf-8引起的hack失效问题，如gbk编码*/ 
+				width: 50px;
+				height:50px;
+				opacity: .5;
+				filter: alpha(opacity=50);
+				border:2px solid transparent;
+				&:hover,&.select {
+					opacity: 1;
+					filter: alpha(opacity=100);
+					border:2px solid #eb7350;
+				}
+				img {
+					vertical-align:middle;
+					max-width: 46px;
+  					max-height: 46px;
+					
+				}
+			}
+		}
+	}
+}
+img.load-img {
+	position: absolute;
+	left: 50%;
+	margin-left: -16px;
+	top: 50%;
+	margin-top: -16px;
+}
+.leftcursor {
+	cursor: url("@{version}/images/pic_prev.cur"),auto;
+}
+.rightcursor {
+	cursor: url("@{version}/images/pic_next.cur"),auto;
+}
+.smallcursor {
+	cursor: url("@{version}/images/small.cur"),auto;
+}

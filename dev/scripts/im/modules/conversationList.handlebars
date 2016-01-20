@@ -1,0 +1,56 @@
+{{#is type "not" 1}}<ul>{{/is}}
+	{{#each data}}
+	{{#is ../msgtype "not" 1}}<li action-type="show-chat" data-cid="{{cid}}" {{#map2 lastMessages 0}}data-t="{{baseMessage.createdAt}}"{{/map2}} data-bind-lastmsg="{{cid}}">{{/is}}
+		<div class="media">
+		  <div class="media-left">
+		  		{{#is baseConversation.unreadPoint "not" 0}}
+			  		<span class="msg-status">{{baseConversation.unreadPoint}}</span>
+			  	{{/is}}
+		  		{{#is isSingleChat "===" false}}
+		  		<img class="media-object itu-img" src="{{baseConversation.icon}}" alt="{{baseConversation.title}}">
+		  		{{else}}
+		  		<img class="media-object itu-img" openId="{{../../openId}}" data-avatar="{{splitSid cid ../../openId}}" src="http://s1.renhe.cn/images/headnone_50.jpg">
+		  		{{/is}}
+		  </div>
+		  <div class="media-body">
+		  	{{#is isSingleChat "===" false}}
+		    <h4 class="media-heading text-overflow" title="{{baseConversation.title}}">{{baseConversation.title}}</h4>
+		    {{else}}
+		    <h4 class="media-heading text-overflow" data-nick="{{splitSid cid ../../openId}}">{{cid}}</h4>
+		    {{/is}}
+		    {{#each lastMessages}}
+		    <p class="action-text">
+		    	{{#is ../isSingleChat "===" false}}
+			    	{{#is baseMessage.creatorType "not" 2}}
+			    	<span data-nick="{{baseMessage.openIdEx.openId}}"></span>:
+			    	{{/is}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 1}}
+		    	{{baseMessage.content.textContent.text}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 2}}
+		    	{{map ../../../i18n 0}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 3}}
+		    	{{map ../../../i18n 1}} 
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 4}}
+		    	{{map ../../../i18n 2}}{{baseMessage.content.fileContent.fileName}}
+		    	{{/is}}
+		    	{{#is baseMessage.content.contentType "===" 102}}
+		    		{{#each baseMessage.content.attachments}}
+		    		{{#chatIsCard url}}
+		    		{{map ../../../../../i18n 5}}{{../extension.text}}
+		    		{{else}}
+		    		{{map ../../../../../i18n 3}}{{../extension.text}}
+		    		{{/chatIsCard}}
+		    		{{/each}}
+		    	{{/is}}
+		    </p>
+		    <p class="action-time">{{calendar baseMessage.createdAt}}</p>
+		   {{/each}}
+		  </div>
+		</div>
+	{{#is ../msgtype "not" 1}}</li>{{/is}}
+	{{/each}}
+{{#is type "not" 1}}</ul>{{/is}}

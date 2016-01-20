@@ -1,0 +1,61 @@
+<div class="text-right js-add-opts">
+	<p><a href="javascript:void(0);" class="js-add-panel" data-template="#EducationExperienceTemplate">{{map i18n.text 8}}{{map i18n.text 10}}</a></p>
+</div>
+{{#each data.educations}}
+<form class="form-horizontal js-validate">
+	
+	<div class="form-group">
+
+		<input type="hidden" value="{{education.id}}" name="id" />
+		<label class="col-sm-1 control-label">{{map ../i18n/label 8}}</label>
+	    <div class="col-sm-11 edit-area-dist js-school-dist">
+			<select class="form-control school_country" name="school_country" data-value="{{countryId}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 22}}'}}"></select> 
+			<select class="form-control school_prov" name="school_prov" data-value="{{provinceId}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 22}}'}}"></select>
+	    </div>
+	</div>
+	<div class="form-group school_school_Show" style="display:none;">
+		<div class="col-sm-5 col-sm-offset-1">
+			<select class="form-control school_school" name="school_school" data-value="{{education.schoolId}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 22}}'}}"></select>
+		</div>
+		<div class="col-sm-6">
+			<input type="text" class="form-control school_school_Text" name="school_school_Text" style="display:none;" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 22}}'}}">
+		</div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 9}}</label>
+	    <div class="col-sm-3">
+	      <input type="text" class="form-control" name="degree" value="{{education.degree}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 23}}'}}">
+	    </div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 10}}</label>
+	    <div class="col-sm-3">
+	      <input type="text" class="form-control" name="studyField" value="{{education.studyField}}" validate="{validate:{required:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 24}}'}}">
+	    </div>
+	</div>
+	<div class="form-group">
+		<label class="col-sm-1 control-label">{{map ../i18n/label 2}}</label>
+	    <div class="col-sm-11 sxtime">
+	    	<input type="text" class="form-control" name="startYear" value="{{startYear}}" validate="{validate:{required:true,digits:true,cnowYear:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 4}}',digits:'{{map ../i18n/massages 0}}{{map ../i18n/massages 5}}',cnowYear:'{{map ../massages 6}}'}}">
+	      	<select name="startMonth" class="form-control" value="{{startDate}}" validate="{validate:{required:true,cnowMonth:'[name=startYear]'},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 7}}',cnowMonth:'{{map ../i18n/massages 8}}'}}">
+				<option value="">{{map ../i18n/text 1}}</option>
+				{{#each ../i18n/monthList}}
+				<option value="{{this}}" {{#is ../startMonth "===" this}}selected{{/is}}>{{this}}</option>
+				{{/each}}
+			</select>
+			<span class="form-control-static">{{map ../i18n/text 2}}</span>
+			<input type="text" class="form-control" name="endYear" value="{{endYear}}" validate="{validate:{required:true,digits:true,cnowYear:true},messages:{required:'{{map ../i18n/massages 0}}{{map ../i18n/massages 9}}',digits:'{{map ../i18n/massages 0}}{{map ../i18n/massages 10}}',cnowYear:'{{map ../i18n/massages 11}}'}}">
+	      	<select name="endMonth"  class="form-control" value="endMonth" validate="{validate:{required:true,cnowMonth:'[name=endYear]',compareDate:true},messages:{required:'{{map ../i18n/massages 1}}{{map ../i18n/massages 12}}',cnowMonth:'{{map ../i18n/massages 13}}',compareDate:'{{map ../i18n/massages 14}}'}}">
+				<option value="">{{map ../i18n/text 1}}</option>
+				{{#each ../i18n/monthList}}
+				<option value="{{this}}" {{#is ../endMonth "===" this}}selected{{/is}}>{{this}}</option>
+				{{/each}}
+			</select>
+
+	    </div>
+	</div>
+	<div class="text-right">
+		<p><a href="javascript:void(0);" class="js-remove-panel">{{map i18n.text 7}}{{map i18n.text 10}}</a></p>
+	</div>
+</form>
+{{/each}}

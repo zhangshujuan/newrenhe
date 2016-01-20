@@ -1,0 +1,84 @@
+<div class="panel renhe-panel">
+	<div class="panel-heading clearfix">
+		<div class="pull-left">{{map invI18n 0}}</div>
+		<div class="pull-right">
+			<a href="javascript:void(0);" node-type="invite-fiter" data-status="" class="mr10">{{map invI18n 1}}</a>
+			<a href="javascript:void(0);" node-type="invite-fiter" data-status="1">{{map invI18n 2}}</a>
+			<a href="javascript:void(0);" node-type="invite-fiter" data-status="2">{{map invI18n 3}}</a>
+		</div>
+	</div>
+	<div class="panel-body">
+		{{#if ltRate}}
+		{{#is ltRate ">" 0}}
+		<div class="hint-tips well clearfix">
+			<p><i class="icon-ok-sign"></i>
+			{{#map2 invI18n 4}}
+				{{dataPlace this ../inviteCount ../inviteSuccessCount ../rate ../ltRate}}
+			{{/map2}}
+		</div>
+		{{/is}}
+		{{/if}}
+		<div class="renmai-manage-con">
+			<ul class="clearfix">
+			{{#each invitelist}}
+				{{#if toMember}}
+				<li class="inv-card">
+					<div class="media">
+						<div class="media-left">
+							<a href="/viewprofile.xhtml?sid={{toMember.sid}}">
+							  <img class="media-object squ-img" src="{{toMember.minFiftyUserFaceImageUrl}}" alt="{{toMember.name}}">
+							</a>
+						</div>
+						<div class="media-body">
+							<div class="col-xs-3">
+								<h4 class="media-heading"><a href="/viewprofile.xhtml?sid={{toMember.sid}}" target="_blank" class="mr5">{{toMember.name}}</a></h4>
+								<p>{{toMember.curTitle}}</p>
+								<p>{{toMember.curCompany}}</p>
+							</div>
+							<div class="col-xs-4">
+								{{#is rec.type "===" "direct"}}
+									{{rec.fromContent}}
+								{{else}}
+									{{rec.fromComment}}
+								{{/is}}
+								<p class="time">{{rec.createdDateShow}}</p>
+							</div>
+							<div class="col-xs-2 text-center">
+								{{!-- {{#is rec.type "===" "direct"}} --}}
+								{{!--	{{map ../../../invI18n 5}} --}}
+								{{!-- {{else}} --}}
+								{{!--	{{map ../../../invI18n 6}}{{#if refmember}}<a href="/viewprofile.xhtml?sid={{refmember.sid}}" target="_blank">{{refmember.name}}</a>{{/if}} --}}
+								{{!-- {{/is}} --}}
+								{{!-- <br> --}}
+								{{#iArr "new,route,route1,route2"}}
+									{{#is ../rec.status "in" this}}
+										<span>{{map ../../../../invI18n 7}}</span>
+										{{#is ../../showRhkd "===" true}}
+										<a href="javascript:void(0)" node-type="sendsmsInvite" data-params="toId={{../../../toMember.sid}}&rid={{../../../sid}}">
+										{{!-- <img src="http://{{../../../../../staticDomain}}/images/renheexpress_55x24.png" width="55" height="24" alt="{{map ../../../../../invI18n 12}}" title="{{map ../../../../../invI18n 12}}"> --}}
+										{{map ../../../../../invI18n 12}}
+										</a>
+										{{/is}}
+									{{/is}}
+								{{/iArr}}
+								{{#is rec.status "===" "accepted"}}{{map ../../../invI18n 8}}{{/is}}
+								{{#is rec.status "===" "refused"}}{{map ../../../invI18n 9}}{{/is}}
+								
+							</div>
+							<div class="col-xs-2 text-center">
+								{{#is rec.status "not" "accepted"}}
+								<a href="/contact/add_friend_driect.xhtml?sfid={{toMember.sid}}" target="_blank">{{map ../../../invI18n 10}}</a>
+								{{/is}}
+							</div>
+							<div class="col-xs-1">
+								<a href="javascript:void(0);" node-type="del-invite" data-id="{{sid}}">{{map ../../invI18n 11}}</a>
+							</div>
+						</div>
+					</div>
+				</li>
+				{{/if}}
+				{{/each}}
+			</ul>
+		</div>
+	</div>
+</div>

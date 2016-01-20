@@ -1,0 +1,20 @@
+{{#each messages}}
+	{{#is hideTime "not" true}}
+	<li class="chat-times"><span>{{dateFormat createdDate "YYYY-MM-DD HH:mm:ss"}}</span></li>
+	{{/is}}
+	<li data-id="{{id}}" {{#is bizType "not" 6}}class="clearfix his-chart"{{else}}class="clearfix myself-chart"{{/is}}>
+		<div class="user-img">
+			{{#is bizType "not" 6}}
+			<img class="media-object cmu-img" src="{{staticDomainUrl '/images/iconfiletype/icon_markman_people@3x.png'}}">
+			{{else}}
+			<img class="media-object cmu-img" data-avatar="{{../../openId}}" src="http://s1.renhe.cn/images/headnone_50.jpg">
+			{{/is}}
+		</div>
+		<div class="msg-wrap">
+			<em class="msg-arrow single"></em>
+			<div class="chartmsg">
+				{{safeString content}}
+			</div>
+		</div>
+	</li>
+{{/each}}

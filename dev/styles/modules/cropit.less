@@ -1,0 +1,58 @@
+.cropit {
+	&-image-background {
+		opacity: .2;
+	}
+	input&-image-zoom-input {
+		position: relative;
+	}
+	&-main {
+		display:none;
+	}
+	&-column {
+		overflow: hidden;
+		background-color: #ccc;
+    	padding: 45px 45px 10px 45px;
+	}
+	&-image-preview {
+	    width: 150px;
+	    height: 150px;
+	    border: 1px solid #eee;
+	    &.cropit-image-loaded {
+		    cursor: move;
+		}
+	}
+	&-slider-wrapper {
+	    margin-top: 20px;
+	    text-align: center;
+	    -webkit-transition: opacity 0.25s;
+	    -moz-transition: opacity 0.25s;
+	    -o-transition: opacity 0.25s;
+	    -ms-transition: opacity 0.25s;
+	    transition: opacity 0.25s;
+	    * {
+	    	vertical-align: middle;
+	    }
+	    .small-image {
+		    font-size: 16px;
+		}
+		.large-image {
+		    font-size: 24px;
+		}
+		.cropit-image-zoom-input {
+		    width: 58px;
+		    margin: 0 20px;
+		    position: relative;
+		}
+		.cropit-image-zoom-input.custom {
+		    -webkit-appearance: none;
+		    -moz-appearance: none;
+		    appearance: none;
+		    height: 5px;
+		    background: #eee;
+		    -webkit-border-radius: 5px;
+		    border-radius: 5px;
+		    outline: none;
+		    display: inline;
+		}
+	}
+}

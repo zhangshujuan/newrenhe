@@ -1,0 +1,19 @@
+{{#each data.educations}}
+{{#is @index "not" 0}}<hr class="row"/>{{/is}}
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 8}}</dt>
+	<dd>{{education.schoolName}}</dd>
+</dl>
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 9}}</dt>
+	<dd>{{education.degree}}</dd>
+</dl>
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 10}}</dt>
+	<dd>{{education.studyField}}</dd>
+</dl>
+<dl class="renhe-dl">
+	<dt>{{map ../i18n/label 11}}</dt>
+	<dd>{{startDate}}--{{endDate}}</dd>
+</dl>
+{{/each}}

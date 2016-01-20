@@ -1,0 +1,21 @@
+<p>
+{{#each data}}
+	<img src="{{map ../profile baseMessage.openIdEx.openId 'avatar'}}">
+	{{map ../profile baseMessage.openIdEx.openId 'nick'}}:
+	{{#is baseMessage.content.contentType "===" 1}}
+		{{face baseMessage.content.textContent.text}}
+	{{/is}}
+	{{#is baseMessage.content.contentType "===" 2}}
+		<img src="{{baseMessage.content.photoContent.mediaId}}" style="max-width:100%;">
+	{{/is}}
+	{{#is baseMessage.content.contentType "===" 3}}
+		{{map ../i18n.msgType 1}}
+	{{/is}}
+	{{#is baseMessage.content.contentType "===" 4}}
+		{{map ../i18n.msgType 2}}
+	{{/is}}
+	{{#is baseMessage.content.contentType "===" 102}}
+	    {{map ../i18n.msgType 3}}
+	{{/is}}
+{{/each}}
+</p>
